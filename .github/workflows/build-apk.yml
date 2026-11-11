@@ -25,12 +25,12 @@ jobs:
           cp sw.js www/
 
       - name: Install Capacitor CLI
-        run: npm install -g @capacitor/cli @capacitor/core
+        run: npm install -g @capacitor/cli@5 @capacitor/core@5
 
       - name: Initialize Node project and install dependencies
         run: |
           npm init -y
-          npm install @capacitor/android @capacitor/core
+          npm install @capacitor/android@5 @capacitor/core@5
 
       - name: Add Android Platform
         run: npx cap add android
@@ -38,11 +38,14 @@ jobs:
       - name: Sync Web Files
         run: npx cap sync android
 
+      - name: Clean Gradle Cache
+        run: rm -rf ~/.gradle/caches
+
       - name: Build APK via Gradle
         run: |
           cd android
           chmod +x gradlew
-          ./gradlew assembleDebug --refresh-dependencies
+          ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
