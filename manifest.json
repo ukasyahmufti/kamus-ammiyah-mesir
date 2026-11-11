@@ -1,0 +1,15 @@
+{
+  "name": "Kamus ‘Ammiyah Mesir",
+  "short_name": "Kamus Mesir",
+  "start_url": "./kamus-ammiyah.html",
+  "display": "standalone",
+  "background_color": "#EEF3F2",
+  "theme_color": "#0F6B6B",
+  "icons": [
+    {
+      "src": "https://img.icons8.com/color/96/dictionary.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}
