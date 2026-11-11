@@ -16,6 +16,14 @@ jobs:
         with:
           node-version: 18
 
+      - name: Prepare Web Directory
+        run: |
+          mkdir www
+          cp index.html www/
+          cp kamus.json www/
+          cp manifest.json www/
+          cp sw.js www/
+
       - name: Install Capacitor CLI
         run: npm install -g @capacitor/cli @capacitor/core
 
