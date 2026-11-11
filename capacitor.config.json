@@ -1,6 +1,6 @@
 {
   "appId": "com.kamus.ammiyah",
   "appName": "Kamus ‘Ammiyah Mesir",
-  "webDir": ".",
+  "webDir": "www",
   "bundledWebRuntime": false
 }
