@@ -23,6 +23,7 @@ jobs:
           cp kamus.json www/
           cp manifest.json www/
           cp sw.js www/
+          cp icon.png www/
 
       - name: Install Capacitor CLI
         run: npm install -g @capacitor/cli@5 @capacitor/core@5
