@@ -32,6 +32,11 @@ jobs:
         run: |
           npm init -y
           npm install @capacitor/android@5 @capacitor/core@5
+                - name: Install Capacitor Assets & Generate Icons
+         
+          npm install -D @capacitor/assets
+          npx capacitor-assets generate --android
+
 
       - name: Add Android Platform
         run: npx cap add android
