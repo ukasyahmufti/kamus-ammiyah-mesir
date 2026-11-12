@@ -23,7 +23,6 @@ jobs:
           cp kamus.json www/
           cp manifest.json www/
           cp sw.js www/
-          cp icon.png www/
 
       - name: Install Capacitor CLI
         run: npm install -g @capacitor/cli@5 @capacitor/core@5
@@ -32,11 +31,6 @@ jobs:
         run: |
           npm init -y
           npm install @capacitor/android@5 @capacitor/core@5
-                - name: Install Capacitor Assets & Generate Icons
-         
-          npm install -D @capacitor/assets
-          npx capacitor-assets generate --android
-
 
       - name: Add Android Platform
         run: npx cap add android
