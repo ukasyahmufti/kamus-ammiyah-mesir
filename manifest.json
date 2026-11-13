@@ -1,0 +1,17 @@
+{
+  "name": "Kamus ‘Ammiyah Mesir",
+  "short_name": "Kamus Mesir",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#EEF3F2",
+  "theme_color": "#0F6B6B",
+  "icons": [
+    {
+      "src": "assets/icon.png",
+      "sizes": "1536x1536",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ]
+}
