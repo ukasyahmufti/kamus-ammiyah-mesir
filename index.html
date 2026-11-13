@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kamus ‘Ammiyah Mesir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+:root{--bg:#EEF3F2;--sf:#fff;--ink:#10262B;--mut:#54696D;--ln:#D5E0DE;--ac:#0F6B6B;--acink:#fff;--acsoft:#E1EFED;--mast:#0B3B40;--mastink:#EAF6F4;--gold:#B8862B;--sel:#F4F9F8;color-scheme:light;
+--ar:Amiri,"Noto Naskh Arabic","Geeza Pro","Traditional Arabic",serif;--ui:Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0C1517;--sf:#132023;--ink:#E6F0EE;--mut:#9BB2B0;--ln:#25393B;--ac:#5CC4BC;--acink:#08201F;--acsoft:#173235;--mast:#0E3A3F;--gold:#E0B25A;--sel:#172A2D;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0C1517;--sf:#132023;--ink:#E6F0EE;--mut:#9BB2B0;--ln:#25393B;--ac:#5CC4BC;--acink:#08201F;--acsoft:#173235;--mast:#0E3A3F;--gold:#E0B25A;--sel:#172A2D;color-scheme:dark}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1rem/1.5 var(--ui);-webkit-text-size-adjust:100%}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 56px}
+button{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+
+.mast{margin:16px 0 6px;padding:26px 22px 20px;border-radius:20px;color:var(--mastink);
+background:linear-gradient(90deg,var(--mast) 18%,transparent 92%),url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23fff' stroke-opacity='.1'%3E%3Crect x='14' y='14' width='28' height='28'/%3E%3Crect x='14' y='14' width='28' height='28' transform='rotate(45 28 28)'/%3E%3Ccircle cx='28' cy='28' r='6'/%3E%3C/g%3E%3C/svg%3E") var(--mast)}
+.mast h1{margin:0;font:700 clamp(2.1rem,9vw,3.3rem)/1.4 var(--ar);text-align:right}
+.mast p{margin:6px 0 0;display:flex;justify-content:space-between;gap:12px;font-size:.95rem;opacity:.9}
+
+.tb{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);padding:10px 0 8px}
+.search{display:flex;align-items:center;gap:10px;height:50px;padding:0 6px 0 14px;background:var(--sf);border:1px solid var(--ln);border-radius:14px;color:var(--mut)}
+.search:focus-within{border-color:var(--ac);box-shadow:0 0 0 3px var(--acsoft)}
+.search svg{flex:none}
+.search input{flex:1;min-width:0;height:100%;border:0;background:none;outline:0;font:inherit;font-size:1rem;color:var(--ink)}
+.search input::-webkit-search-cancel-button{display:none}
+.x{flex:none;width:40px;height:40px;border:0;border-radius:10px;background:none;color:var(--mut);cursor:pointer;font-size:1.3rem}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:10px 0 4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:36px;padding:5px 13px;border:1px solid var(--ln);border-radius:999px;background:var(--sf);font-size:.875rem;cursor:pointer;white-space:nowrap}
+.chip .n{color:var(--mut);margin-left:4px;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--ac);border-color:var(--ac);color:var(--acink)}
+.chip[aria-pressed="true"] .n{color:inherit;opacity:.8}
+.chip.dim{opacity:.45}
+
+.meta{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 0 10px;color:var(--mut);font-size:.9rem}
+.seg{display:inline-flex;border:1px solid var(--ln);border-radius:10px;overflow:hidden;background:var(--sf)}
+.seg button{border:0;background:none;padding:7px 12px;font-size:.84rem;color:var(--mut);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--acsoft);color:var(--ac);font-weight:600}
+
+.list{list-style:none;margin:0;padding:0;background:var(--sf);border:1px solid var(--ln);border-radius:16px;overflow:hidden}
+.grp{padding:6px 18px;background:var(--bg);border-bottom:1px solid var(--ln);color:var(--mut);font-weight:600;font-size:.9rem}
+.grp.a{font:700 1.25rem/1.5 var(--ar)}
+.row{border-bottom:1px solid var(--ln);scroll-margin-top:150px}
+.row:last-child{border-bottom:0}
+.row.open{background:var(--sel)}
+.head{display:flex;align-items:stretch}
+.rowbtn{flex:1;min-width:0;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 6px 13px 18px;border:0;background:none;text-align:left;cursor:pointer}
+.rowbtn:hover{background:var(--sel)}
+.lat{display:flex;flex-direction:column;min-width:0}
+.mean{font-weight:600;font-size:1.05rem;overflow-wrap:anywhere}
+.tr{font-style:italic;color:var(--mut);font-size:.9rem}
+.ar{flex:none;font:400 1.9rem/1.45 var(--ar);text-align:right}
+.mode-id .mean{font-size:1.2rem}
+.mode-id .ar{font-size:1.55rem;color:var(--ac)}
+.star{flex:none;width:54px;border:0;background:none;color:var(--mut);cursor:pointer;display:grid;place-items:center}
+.star path{fill:none;stroke:currentColor;stroke-width:1.7;stroke-linejoin:round}
+.star[aria-pressed="true"]{color:var(--gold)}
+.star[aria-pressed="true"] path{fill:currentColor}
+
+.detail{display:grid;gap:16px;padding:4px 18px 18px;animation:in .18s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(-4px)}}
+.lbl{margin-bottom:6px;font-size:.8rem;color:var(--mut)}
+.fu{display:flex;flex-wrap:wrap;gap:8px}
+.fu span{padding:0 12px;border:1px solid var(--ln);border-radius:8px;background:var(--sf);font:400 1.4rem/1.6 var(--ar)}
+.ex{padding:10px 14px;border-left:3px solid var(--ac);background:var(--sf);border-radius:0 10px 10px 0}
+.exar{font:400 1.5rem/1.8 var(--ar);text-align:right}
+.exid{margin-top:2px;color:var(--mut)}
+.acts{display:flex;flex-wrap:wrap;gap:8px}
+.btn{min-height:38px;padding:6px 14px;border:1px solid var(--ln);border-radius:10px;background:var(--sf);font-size:.875rem;cursor:pointer}
+.btn:hover{border-color:var(--ac);color:var(--ac)}
+
+.note{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 10px;padding:10px 14px;border:1px solid var(--gold);border-radius:12px;background:var(--sf);font-size:.9rem}
+.note[hidden]{display:none}
+.empty{padding:40px 20px;text-align:center;color:var(--mut)}
+.empty p{margin:0 0 14px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,12px);padding:10px 16px;border-radius:10px;background:var(--ink);color:var(--bg);font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;z-index:20;max-width:90vw}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media (max-width:420px){.meta{flex-wrap:wrap}.ar{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="mast">
+    <h1 lang="ar" dir="rtl">قاموس العامية المصرية</h1>
+    <p><span>Kamus ‘Ammiyah Mesir</span><span id="total"></span></p>
+  </header>
+
+  <div class="tb">
+    <label class="search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <span class="sr">Cari kata</span>
+      <input id="q" type="search" dir="auto" inputmode="search" enterkeyhint="search" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Cari kata Arab, latin, atau arti">
+      <button class="x" id="clear" type="button" aria-label="Hapus pencarian" hidden>×</button>
+    </label>
+    <div class="chips" id="chips" role="group" aria-label="Filter kategori"></div>
+  </div>
+
+  <div class="meta">
+    <span id="count" aria-live="polite">Memuat kamus…</span>
+    <div class="seg" role="group" aria-label="Urutan kamus">
+      <button type="button" data-mode="ar" aria-pressed="true">Arab–Indonesia</button>
+      <button type="button" data-mode="id" aria-pressed="false">Indonesia–Arab</button>
+    </div>
+  </div>
+
+  <div class="note" id="note" role="status" hidden></div>
+  <ul class="list" id="list"></ul>
+  <div class="empty list" id="empty" hidden></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const FALLBACK=[{"id":1,"ammiyah":"حلة","transliterasi":"hilla","fushha":"قِدْر / طَنْجَرَة","arti":"panci","kategori":"dapur","contoh_ammiyah":"حط الأكل في الحلة","contoh_arti":"Masukkan makanan ke dalam panci"},{"id":2,"ammiyah":"طاسة","transliterasi":"tasa","fushha":"مِقْلَاة","arti":"wajan / penggorengan","kategori":"dapur","contoh_ammiyah":"اقلي البيض في الطاسة","contoh_arti":"Goreng telur di wajan"},{"id":3,"ammiyah":"كوباية","transliterasi":"kobbaya","fushha":"كُأْس / كُوب","arti":"gelas","kategori":"dapur","contoh_ammiyah":"عايز كوباية مية ساقعة","contoh_arti":"Saya mau segelas air dingin"},{"id":4,"ammiyah":"معلقة","transliterasi":"maʿla'a","fushha":"مِلْعَقَة","arti":"sendok","kategori":"dapur","contoh_ammiyah":"اتفضل معلقة عشان الشوربة","contoh_arti":"Silakan sendok untuk supnya"},{"id":5,"ammiyah":"شوكة","transliterasi":"shooka","fushha":"شَوْكَة","arti":"garpu","kategori":"dapur","contoh_ammiyah":"ناقص شوكة على الترابيزة","contoh_arti":"Kurang garpu di atas meja"},{"id":6,"ammiyah":"سكينة","transliterasi":"sekkeena","fushha":"سِكِّين","arti":"pisau","kategori":"dapur","contoh_ammiyah":"خلي بالك السكينة حامية","contoh_arti":"Hati-hati pisaunya tajam"},{"id":7,"ammiyah":"طبق","transliterasi":"taba'","fushha":"طَبَق / صَحْن","arti":"piring","kategori":"dapur","contoh_ammiyah":"حط الرز في الطبق","contoh_arti":"Taruh nasinya di piring"},{"id":8,"ammiyah":"ترابيزة","transliterasi":"tarabeza","fushha":"طَاوِلَة / مَائِدَة","arti":"meja","kategori":"perkakas rumah","contoh_ammiyah":"حط الكتاب على الترابيزة","contoh_arti":"Taruh bukunya di atas meja"},{"id":9,"ammiyah":"كرسي","transliterasi":"korsi","fushha":"كُرْسِي","arti":"kursi","kategori":"perkakas rumah","contoh_ammiyah":"اتفضل اقعد على الكرسي ده","contoh_arti":"Silakan duduk di kursi ini"},{"id":10,"ammiyah":"كنبة","transliterasi":"kanaba","fushha":"أَرِيكَة","arti":"sofa / kursi panjang","kategori":"perkakas rumah","contoh_ammiyah":"أنا قاعد على الكنبة","contoh_arti":"Saya sedang duduk di sofa"},{"id":11,"ammiyah":"سرير","transliterasi":"sareer","fushha":"سَرِير","arti":"tempat tidur / ranjang","kategori":"perkakas rumah","contoh_ammiyah":"السرير ده مريح قوي","contoh_arti":"Ranjang ini sangat nyaman"},{"id":12,"ammiyah":"مخدة","transliterasi":"makhadda","fushha":"وِسَادَة","arti":"bantal","kategori":"perkakas rumah","contoh_ammiyah":"عايز مخدة زيادة لو سمحت","contoh_arti":"Saya mau bantal tambahan tolong"},{"id":13,"ammiyah":"بطانية","transliterasi":"battaneyya","fushha":"بَطَّانِيَّة","arti":"selimut","kategori":"perkakas rumah","contoh_ammiyah":"الجو برد، هات البطانية","contoh_arti":"Udara dingin, bawakan selimut"},{"id":14,"ammiyah":"دولاب","transliterasi":"doolab","fushha":"خِزَانَة","arti":"lemari pakaian","kategori":"perkakas rumah","contoh_ammiyah":"علق الهدوم في الدولاب","contoh_arti":"Gantung pakaian di lemari"},{"id":15,"ammiyah":"مروحة","transliterasi":"marwaha","fushha":"مِرْوَحَة","arti":"kipas angin","kategori":"elektronik","contoh_ammiyah":"شغل المروحة عشان الحر","contoh_arti":"Nyalakan kipas angin karena panas"},{"id":16,"ammiyah":"تكييف","transliterasi":"takyeef","fushha":"مُكَيِّف الهَوَاء","arti":"AC (Air Conditioner)","kategori":"elektronik","contoh_ammiyah":"التكييف شغال في الأوضة","contoh_arti":"AC sedang menyala di kamar"},{"id":17,"ammiyah":"فيشة","transliterasi":"feesha","fushha":"قَابِس / مَقْبَس كَهْرَبَائِي","arti":"steker / colokan listrik","kategori":"elektronik","contoh_ammiyah":"حط فيشة الشاحن هنا","contoh_arti":"Masukkan steker charger di sini"},{"id":18,"ammiyah":"مشترك","transliterasi":"moshtarak","fushha":"مُوَزِّع كَهْرَبَاء","arti":"stop kontak kabel / terminal listrik","kategori":"elektronik","contoh_ammiyah":"فين المشترك عشان الموبايل؟","contoh_arti":"Di mana terminal listrik untuk HP?"},{"id":19,"ammiyah":"شاحن","transliterasi":"shahen","fushha":"شَاحِن","arti":"charger (pengisi daya)","kategori":"elektronik","contoh_ammiyah":"معاك شاحن سامسونج؟","contoh_arti":"Kamu punya charger Samsung?"},{"id":20,"ammiyah":"سلك","transliterasi":"silk","fushha":"سِلْك","arti":"kabel","kategori":"elektronik","contoh_ammiyah":"السلك ده مقطوع","contoh_arti":"Kabel ini terputus/rusak"},{"id":21,"ammiyah":"لمبة","transliterasi":"lamba","fushha":"مِصْبَاح","arti":"bohlam / lampu","kategori":"elektronik","contoh_ammiyah":"اللمبة محروقة محتاجة تتغير","contoh_arti":"Lampu mati/putus perlu diganti"},{"id":22,"ammiyah":"مفك","transliterasi":"mifakk","fushha":"مِفَكّ","arti":"obeng","kategori":"perkakas rumah","contoh_ammiyah":"هات المفك عشان نربط المسمار","contoh_arti":"Bawakan obeng untuk mengencangkan baut"},{"id":23,"ammiyah":"مسمار","transliterasi":"mosmar","fushha":"مِسْمَار","arti":"paku / baut","kategori":"perkakas rumah","contoh_ammiyah":"المسمار ده مش مظبوط","contoh_arti":"Paku ini tidak pas/lurus"},{"id":24,"ammiyah":"شاكوش","transliterasi":"shakoosh","fushha":"مِطْرَقَة","arti":"palu / martil","kategori":"perkakas rumah","contoh_ammiyah":"دق المسمار بالشاكوش","contoh_arti":"Pukul pakunya pakai palu"},{"id":25,"ammiyah":"بنسة","transliterasi":"binsa","fushha":"كَمَّاشَة / زَرَدِيَّة","arti":"tang (alat jepit)","kategori":"perkakas rumah","contoh_ammiyah":"امسك السلك بالبنسة","contoh_arti":"Pegang kabelnya memakai tang"},{"id":26,"ammiyah":"مقص","transliterasi":"ma'ass","fushha":"مِقَصّ","arti":"gunting","kategori":"perkakas rumah","contoh_ammiyah":"قص الورقة بالمقص","contoh_arti":"Potong kertasnya pakai gunting"},{"id":27,"ammiyah":"شباك","transliterasi":"shubbak","fushha":"نَافِذَة","arti":"jendela","kategori":"bangunan","contoh_ammiyah":"افتح الشباك يدخل هواء","contoh_arti":"Buka jendela agar udara masuk"},{"id":28,"ammiyah":"باب","transliterasi":"bab","fushha":"بَاب","arti":"pintu","kategori":"bangunan","contoh_ammiyah":"سيب المفتاح في الباب","contoh_arti":"Biarkan kuncinya menempel di pintu"},{"id":29,"ammiyah":"مفتاح","transliterasi":"miftah","fushha":"مِفْتَاح","arti":"kunci","kategori":"bangunan","contoh_ammiyah":"ضايع مني مفتاح الشقة","contoh_arti":"Kunci apartemen saya hilang"},{"id":30,"ammiyah":"قفل","transliterasi":"'ofl","fushha":"قُفْل","arti":"gembok","kategori":"bangunan","contoh_ammiyah":"ركب القفل على الباب","contoh_arti":"Pasang gembok pada pintu"},{"id":31,"ammiyah":"سجادة","transliterasi":"seggada","fushha":"سَجَّادَة","arti":"karpet / sajadah","kategori":"perkakas rumah","contoh_ammiyah":"نظف السجادة بالمكنسة","contoh_arti":"Bersihkan karpet pakai penyedot debu"},{"id":32,"ammiyah":"مكنسة","transliterasi":"maknasa","fushha":"مِكْنَسَة","arti":"sapu / penyedot debu","kategori":"perkakas rumah","contoh_ammiyah":"هات المكنسة نكنس الأرض","contoh_arti":"Bawa sapu untuk menyapu lantai"},{"id":33,"ammiyah":"ممسحة","transliterasi":"mamsaha","fushha":"مِمْسَحَة","arti":"kain pel / alat pel","kategori":"perkakas rumah","contoh_ammiyah":"امسح الأرض بالممسحة","contoh_arti":"Pel lantainya memakai kain pel"},{"id":34,"ammiyah":"جردل","transliterasi":"gardal","fushha":"دَلْو","arti":"ember","kategori":"perkakas rumah","contoh_ammiyah":"املأ الجردل مية","contoh_arti":"Isi embernya dengan air"},{"id":35,"ammiyah":"جزمة","transliterasi":"gazma","fushha":"حِذَاء","arti":"sepatu","kategori":"pakaian","contoh_ammiyah":"نظف الجزمة قبل ما تخرج","contoh_arti":"Bersihkan sepatu sebelum keluar"},{"id":36,"ammiyah":"شبشب","transliterasi":"shebsheb","fushha":"خُفّ / نَعْل","arti":"sandal","kategori":"pakaian","contoh_ammiyah":"يلبس الشبشب في البيت","contoh_arti":"Dia memakai sandal di dalam rumah"},{"id":37,"ammiyah":"شراب","transliterasi":"sharab","fushha":"جَوْرَب","arti":"kaus kaki","kategori":"pakaian","contoh_ammiyah":"فين الشراب الأسود؟","contoh_arti":"Di mana kaus kaki hitamnya?"},{"id":38,"ammiyah":"قميص","transliterasi":"'amees","fushha":"قَمِيص","arti":"kemeja","kategori":"pakaian","contoh_ammiyah":"اكوي القميص ده لو سمحت","contoh_arti":"Setrikakan kemeja ini tolong"},{"id":39,"ammiyah":"بنطلون","transliterasi":"bantalon","fushha":"بَنطَلُون / سِرْوَال","arti":"celana panjang","kategori":"pakaian","contoh_ammiyah":"البنطلون ده واسع عليّ","contoh_arti":"Celana ini kebesaran untuk saya"},{"id":40,"ammiyah":"نظارة","transliterasi":"nazzara","fushha":"نَظَّارَة","arti":"kacamata","kategori":"aksesori","contoh_ammiyah":"نسيت النظارة على الترابيزة","contoh_arti":"Saya lupa kacamata di atas meja"},{"id":41,"ammiyah":"ساعة","transliterasi":"saʿa","fushha":"سَاعَة","arti":"jam (tangan/dinding)","kategori":"aksesori","contoh_ammiyah":"الساعة كام في ساعتك؟","contoh_arti":"Jam berapa di jam tanganmu?"},{"id":42,"ammiyah":"شنطة","transliterasi":"shanta","fushha":"حَقِيبَة","arti":"tas","kategori":"aksesori","contoh_ammiyah":"حط الكتب في الشنطة","contoh_arti":"Masukkan buku-buku ke dalam tas"},{"id":43,"ammiyah":"كشك","transliterasi":"koshk","fushha":"كُشْك","arti":"kios kecil di jalan","kategori":"bangunan","contoh_ammiyah":"اشتريت مية من الكشك","contoh_arti":"Saya membeli air dari kios"},{"id":44,"ammiyah":"عربية","transliterasi":"ʿarabeyya","fushha":"سَيَّارَة","arti":"mobil / kendaraan","kategori":"transportasi","contoh_ammiyah":"ركنت العربية قدام البيت","contoh_arti":"Saya memarkir mobil di depan rumah"},{"id":45,"ammiyah":"عجلة","transliterasi":"ʿagala","fushha":"دَرَّاجَة","arti":"sepeda / roda","kategori":"transportasi","contoh_ammiyah":"هو بيركب العجلة كل يوم","contoh_arti":"Dia naik sepeda setiap hari"},{"id":46,"ammiyah":"حنفية","transliterasi":"hanafeyya","fushha":"صَنْبُور","arti":"keran air","kategori":"bangunan","contoh_ammiyah":"اقفل الحنفية كويس","contoh_arti":"Tutup kerannya dengan rapat"},{"id":47,"ammiyah":"حوض","transliterasi":"howd","fushha":"حَوْض","arti":"wastafel / bak cuci","kategori":"bangunan","contoh_ammiyah":"اغسل الأطباق في الحوض","contoh_arti":"Cuci piring-piring di wastafel"},{"id":48,"ammiyah":"فوطة","transliterasi":"foota","fushha":"مُنْشَفَة / فُوطَة","arti":"handuk / serbet","kategori":"kamar mandi","contoh_ammiyah":"هات الفوطة انشف إيدي","contoh_arti":"Bawa handuk untuk mengeringkan tangan"},{"id":49,"ammiyah":"صابونة","transliterasi":"saboona","fushha":"صَابُونَة","arti":"sabun batang","kategori":"perkakas rumah","contoh_ammiyah":"فين الصابونة في الحمام؟","contoh_arti":"Di mana sabun di kamar mandi?"},{"id":50,"ammiyah":"غسالة","transliterasi":"ghassala","fushha":"غَسَّالَة","arti":"mesin cuci","kategori":"elektronik","contoh_ammiyah":"حط الهدوم في الغسالة","contoh_arti":"Masukkan baju ke dalam mesin cuci"},{"id":51,"ammiyah":"شامبو","transliterasi":"shamboo","fushha":"شَامْبُون / مُشْتَقَّات غَسْل الشَّعْر","arti":"sampo","kategori":"kamar mandi","contoh_ammiyah":"خلص شامبو، لازم أشتريه","contoh_arti":"Samponya habis, saya harus membelinya"},{"id":52,"ammiyah":"معجون أسنان","transliterasi":"maʿgoon asnan","fushha":"مَعْجُون الْأَسْنَان","arti":"pasta gigi / odol","kategori":"kamar mandi","contoh_ammiyah":"حط معجون أسنان على الفرشة","contoh_arti":"Taruh pasta gigi di atas sikat gigi"},{"id":53,"ammiyah":"فرشة أسنان","transliterasi":"forshet asnan","fushha":"فُرْشَاةُ الْأَسْنَان","arti":"sikat gigi","kategori":"kamar mandi","contoh_ammiyah":"نسيت فرشة أسنان في الشنطة","contoh_arti":"Saya lupa sikat gigi di dalam tas"},{"id":54,"ammiyah":"مراية","transliterasi":"maraya","fushha":"مِرْآة","arti":"cermin","kategori":"perkakas rumah","contoh_ammiyah":"ببص في المراية كل يوم الصبح","contoh_arti":"Saya melihat ke cermin setiap pagi"},{"id":55,"ammiyah":"مشط","transliterasi":"misht","fushha":"مُشْط","arti":"sisir","kategori":"perkakas rumah","contoh_ammiyah":"فين المشط بتاعي؟","contoh_arti":"Di mana sisir saya?"},{"id":56,"ammiyah":"سلة مهملات","transliterasi":"sallit mohmalat","fushha":"سَلَّةُ مُهْمَلَات","arti":"tempat sampah","kategori":"perkakas rumah","contoh_ammiyah":"ارمي الكيس في سلة المهملات","contoh_arti":"Buang kantongnya ke tempat sampah"},{"id":57,"ammiyah":"كيس زبالة","transliterasi":"kees zabbala","fushha":"كِيسُ نِفَايَات","arti":"kantong sampah","kategori":"perkakas rumah","contoh_ammiyah":"هات كيس زبالة جديد","contoh_arti":"Bawa kantong sampah baru"},{"id":58,"ammiyah":"قلم","transliterasi":"'alam","fushha":"قَلَم","arti":"pulpen / pensil","kategori":"alat tulis","contoh_ammiyah":"معاك قلم أكتب بيه؟","contoh_arti":"Kamu punya pulpen untuk saya menulis?"},{"id":59,"ammiyah":"كشكول","transliterasi":"kashkool","fushha":"دَفْتَر / كُنَّاشَة","arti":"buku tulis / catatan","kategori":"alat tulis","contoh_ammiyah":"اكتب الكلمات دي في الكشكول","contoh_arti":"Tulis kata-kata ini di buku catatan"},{"id":60,"ammiyah":"ورقة","transliterasi":"wara'a","fushha":"وَرَقَة","arti":"selembar kertas","kategori":"alat tulis","contoh_ammiyah":"اقطع ورقة من الكشكول","contoh_arti":"Sobek selembar kertas dari buku tulis"},{"id":61,"ammiyah":"استيكة","transliterasi":"estika","fushha":"مِمْحَاة","arti":"penghapus pensil","kategori":"alat tulis","contoh_ammiyah":"معاك استيكة أمسح بيها؟","contoh_arti":"Kamu punya penghapus yang bisa saya pakai untuk menghapus?"},{"id":62,"ammiyah":"مسطرة","transliterasi":"mastara","fushha":"مِسْطَرَة","arti":"penggaris","kategori":"alat tulis","contoh_ammiyah":"شد خط بالمسطرة","contoh_arti":"Tarik garis pakai penggaris"},{"id":63,"ammiyah":"مكتب","transliterasi":"maktab","fushha":"مَكْتَب","arti":"meja kerja / kantor","kategori":"perkakas rumah","contoh_ammiyah":"بذاكر على المكتب في الأوضة","contoh_arti":"Saya belajar di meja kerja dalam kamar"},{"id":64,"ammiyah":"مكتبة","transliterasi":"maktaba","fushha":"مَكْتَبَة","arti":"perpustakaan / toko buku","kategori":"bangunan","contoh_ammiyah":"رايح المكتبة أشتري أقلام","contoh_arti":"Saya pergi ke toko buku untuk membeli pulpen"},{"id":65,"ammiyah":"كرتونة","transliterasi":"kartona","fushha":"صُنْدُوق كَرْتُون","arti":"kotak kardus","kategori":"perkakas rumah","contoh_ammiyah":"حط الهدوم القديمة في الكرتونة","contoh_arti":"Masukkan baju-baju lama ke dalam kardus"},{"id":66,"ammiyah":"بلاستر","transliterasi":"blaster","fushha":"شَرِيط لاصِق","arti":"selotip / plester perekat","kategori":"perkakas rumah","contoh_ammiyah":"اقفل الكرتونة بالبلاستر","contoh_arti":"Tutup kardusnya pakai selotip"},{"id":67,"ammiyah":"كشاف","transliterasi":"kashshaf","fushha":"كَشَّاف / مِصْبَاح جَيْب","arti":"senter","kategori":"elektronik","contoh_ammiyah":"النور قطع، هات الكشاف","contoh_arti":"Lampunya mati, bawakan senter"},{"id":68,"ammiyah":"بطارية","transliterasi":"battareyya","fushha":"بَطَّارِيَّة","arti":"baterai","kategori":"elektronik","contoh_ammiyah":"الموبايل محتاج بطارية جديدة","contoh_arti":"HP-nya butuh baterai baru"},{"id":69,"ammiyah":"ثلاجة","transliterasi":"tallaga","fushha":"ثَلَّاجَة","arti":"kulkas","kategori":"dapur","contoh_ammiyah":"حط المية الباردة في الثلاجة","contoh_arti":"Taruh air dingin di kulkas"},{"id":70,"ammiyah":"بوتاجاز","transliterasi":"bootagaz","fushha":"مَوْقِد / فُرْن غَاز","arti":"kompor gas","kategori":"dapur","contoh_ammiyah":"اعمل الشاي على البوتاجاز","contoh_arti":"Buat teh di atas kompor"},{"id":71,"ammiyah":"فرن","transliterasi":"furn","fushha":"فُرْن","arti":"oven / tempat panggang","kategori":"dapur","contoh_ammiyah":"سخن الأكل في الفرن","contoh_arti":"Panaskan makanannya di dalam oven"},{"id":72,"ammiyah":"ميكروويف","transliterasi":"maykrowayf","fushha":"مِيكْرُويِف","arti":"microwave","kategori":"dapur","contoh_ammiyah":"استخدم الميكروويف للسرعة","contoh_arti":"Gunakan microwave agar cepat"},{"id":73,"ammiyah":"خلاط","transliterasi":"khallat","fushha":"خَلَّاط","arti":"blender (pencampur jus)","kategori":"dapur","contoh_ammiyah":"اعمل عصير مانجة في الخلاط","contoh_arti":"Buat jus mangga di dalam blender"},{"id":74,"ammiyah":"غلاية","transliterasi":"ghallaya","fushha":"غَلَّايَة مَاء","arti":"ketel listrik / teko pemanas air","kategori":"dapur","contoh_ammiyah":"اغلي المية في الغلاية","contoh_arti":"Didihkan air di dalam ketel listrik"},{"id":75,"ammiyah":"صينية","transliterasi":"seneyya","fushha":"صِينِيَّة","arti":"nampan / baki","kategori":"dapur","contoh_ammiyah":"شيل الصينية دي من هنا","contoh_arti":"Singkirkan nampan ini dari sini"},{"id":76,"ammiyah":"براد","transliterasi":"barrad","fushha":"بَرَّاد الشَّاي","arti":"teko teh","kategori":"dapur","contoh_ammiyah":"حط الشاي في البراد","contoh_arti":"Masukkan teh ke dalam teko"},{"id":77,"ammiyah":"مج","transliterasi":"mug","fushha":"كُوب كَبِير / مُجّ","arti":"cangkir besar / mug","kategori":"dapur","contoh_ammiyah":"اشرب القهوة في المج ده","contoh_arti":"Minum kopi di cangkir besar ini"},{"id":78,"ammiyah":"ترمس","transliterasi":"termos","fushha":"تِرْمُس","arti":"termos air panas","kategori":"dapur","contoh_ammiyah":"املأ الترمس مية سخنة","contoh_arti":"Isi termos dengan air panas"},{"id":79,"ammiyah":"درج","transliterasi":"dorg","fushha":"دُرْج","arti":"laci meja","kategori":"perkakas rumah","contoh_ammiyah":"حط المفتاح جوه الدرج","contoh_arti":"Taruh kuncinya di dalam laci"},{"id":80,"ammiyah":"رف","transliterasi":"raff","fushha":"رَفّ","arti":"rak / ambalan dinding","kategori":"perkakas rumah","contoh_ammiyah":"رص الكتب على الرف","contoh_arti":"Susun buku-buku di atas rak"},{"id":81,"ammiyah":"ستارة","transliterasi":"setara","fushha":"سِتَارَة","arti":"gorden / tirai","kategori":"perkakas rumah","contoh_ammiyah":"اقفل الستارة عشان الشمس","contoh_arti":"Tutup gordennya karena ada matahari"},{"id":82,"ammiyah":"دواسة","transliterasi":"dawwasa","fushha":"مِمْسَحَة أَقْدَام","arti":"keset kaki","kategori":"perkakas rumah","contoh_ammiyah":"امسح رجلك في الدواسة","contoh_arti":"Bersihkan kakimu di keset kaki"},{"id":83,"ammiyah":"ساعة حيطة","transliterasi":"saʿet heeta","fushha":"سَاعَةُ حَائِط","arti":"jam dinding","kategori":"perkakas rumah","contoh_ammiyah":"علق ساعة الحيطة في الصالة","contoh_arti":"Gantung jam dinding di ruang tamu"},{"id":84,"ammiyah":"برواز","transliterasi":"berwaz","fushha":"إِطَار / بِروَاز","arti":"bingkai foto / pigura","kategori":"perkakas rumah","contoh_ammiyah":"حط الصورة في البرواز","contoh_arti":"Taruh fotonya di dalam bingkai"},{"id":85,"ammiyah":"ميدالية","transliterasi":"midaleyya","fushha":"حَامِلُ مَفَاتِيح","arti":"gantungan kunci","kategori":"aksesori","contoh_ammiyah":"حط المفتاح في الميدالية","contoh_arti":"Taruh kuncinya di gantungan kunci"},{"id":86,"ammiyah":"محفظة","transliterasi":"mahfaza","fushha":"مِحْفَظَة نُقُود","arti":"dompet","kategori":"aksesori","contoh_ammiyah":"نسيت المحفظة على الترابيزة","contoh_arti":"Saya lupa dompet di atas meja"},{"id":87,"ammiyah":"حزام","transliterasi":"hezam","fushha":"حِزَام","arti":"ikat pinggang / sabuk","kategori":"pakaian","contoh_ammiyah":"البس الحزام مع البنطلون","contoh_arti":"Pakailah ikat pinggang dengan celana panjangnya"},{"id":88,"ammiyah":"طاقية","transliterasi":"ta'iyya","fushha":"قُبَّعَة / طَاقِيَّة","arti":"topi / peci","kategori":"pakaian","contoh_ammiyah":"البس الطاقية عشان الشمس قوية","contoh_arti":"Pakailah topi karena mataharinya terik"},{"id":89,"ammiyah":"شمسية","transliterasi":"shamsiyya","fushha":"مِظَلَّة / شَمْسِيَّة","arti":"payung","kategori":"aksesori","contoh_ammiyah":"خد معاك الشمسية، فيه مطر","contoh_arti":"Bawa payung bersamamu, ada hujan"},{"id":90,"ammiyah":"جاكت","transliterasi":"gakit","fushha":"سُتْرَة","arti":"jaket","kategori":"pakaian","contoh_ammiyah":"الجو برد، البس الجاكت","contoh_arti":"Udaranya dingin, pakailah jaket"},{"id":91,"ammiyah":"بالطو","transliterasi":"balto","fushha":"مِعْطَف","arti":"mantel / jas panjang","kategori":"pakaian","contoh_ammiyah":"البس البالطو، الجو برد النهاردة","contoh_arti":"Pakai mantelnya, hari ini dingin"},{"id":92,"ammiyah":"تيشرت","transliterasi":"teeshirt","fushha":"قَمِيص خَفِيف / تِيشِيرْت","arti":"kaos oblong / t-shirt","kategori":"pakaian","contoh_ammiyah":"أنا لابس تيشرت أبيض","contoh_arti":"Saya memakai kaos putih"},{"id":93,"ammiyah":"بيجامة","transliterasi":"beegama","fushha":"بِجَامَة","arti":"pakaian tidur / piyama","kategori":"pakaian","contoh_ammiyah":"البس البيجامة عشان تنام","contoh_arti":"Pakailah piyama untuk tidur"},{"id":94,"ammiyah":"ملاية سرير","transliterasi":"malayet sareer","fushha":"شَرْشَف السَّرِير","arti":"sprei tempat tidur","kategori":"perkakas rumah","contoh_ammiyah":"غير ملاية السرير لو سمحت","contoh_arti":"Ganti sprei tempat tidurnya tolong"},{"id":95,"ammiyah":"كوفرتا","transliterasi":"koferta","fushha":"غِطَاء خَفِيف / بَطَّانِيَّة خَفِيفَة","arti":"selimut tipis","kategori":"perkakas rumah","contoh_ammiyah":"اتغطي بالكوفرتا بالليل","contoh_arti":"Selimuti dirimu dengan selimut tipis di malam hari"},{"id":96,"ammiyah":"مبخرة","transliterasi":"mabkhara","fushha":"مِبْخَرَة","arti":"pedupaan / tempat bakar dupa","kategori":"perkakas rumah","contoh_ammiyah":"ولع البخور في المبخرة","contoh_arti":"Nyalakan dupa di pedupaan"},{"id":97,"ammiyah":"بخور","transliterasi":"bokhoor","fushha":"بَخُور","arti":"dupa / wewangian","kategori":"perkakas rumah","contoh_ammiyah":"رائحة البخور حلوة قوي في البيت","contoh_arti":"Bau dupanya harum banget di dalam rumah"},{"id":98,"ammiyah":"شمعة","transliterasi":"shamʿa","fushha":"شَمْعَة","arti":"lilin","kategori":"perkakas rumah","contoh_ammiyah":"ولع الشمعة عشان النور قطع","contoh_arti":"Nyalakan lilinnya karena lampunya mati"},{"id":99,"ammiyah":"عيش","transliterasi":"ʿeesh","fushha":"خُبْز","arti":"roti","kategori":"makanan","contoh_ammiyah":"عايز عيش سخن","contoh_arti":"Saya mau roti yang hangat"},{"id":100,"ammiyah":"رز","transliterasi":"rozz","fushha":"أَرُزّ","arti":"nasi / beras","kategori":"makanan","contoh_ammiyah":"الرز ده لسه سخن","contoh_arti":"Nasi ini masih panas"},{"id":101,"ammiyah":"لحمة","transliterasi":"lahma","fushha":"لَحْم","arti":"daging","kategori":"makanan","contoh_ammiyah":"اشتريت كيلو لحمة","contoh_arti":"Saya membeli satu kilo daging"},{"id":102,"ammiyah":"فراخ","transliterasi":"ferakh","fushha":"دَجَاج","arti":"ayam","kategori":"makanan","contoh_ammiyah":"هاكل فراخ النهاردة","contoh_arti":"Saya mau makan ayam hari ini"},{"id":103,"ammiyah":"سمك","transliterasi":"samak","fushha":"سَمَك","arti":"ikan","kategori":"makanan","contoh_ammiyah":"السمك طازة النهاردة","contoh_arti":"Ikannya segar hari ini"},{"id":104,"ammiyah":"بيض","transliterasi":"beed","fushha":"بَيْض","arti":"telur","kategori":"makanan","contoh_ammiyah":"اشتري دستة بيض","contoh_arti":"Belilah selusin telur"},{"id":105,"ammiyah":"جبنة","transliterasi":"gebna","fushha":"جُبْن","arti":"keju","kategori":"makanan","contoh_ammiyah":"عايز ساندوتش جبنة","contoh_arti":"Saya mau sandwich keju"},{"id":106,"ammiyah":"لبن","transliterasi":"laban","fushha":"حَلِيب","arti":"susu","kategori":"minuman","contoh_ammiyah":"بشرب كوباية لبن كل صبح","contoh_arti":"Saya minum segelas susu setiap pagi"},{"id":107,"ammiyah":"زبادي","transliterasi":"zabadi","fushha":"لَبَن رَائِب","arti":"yogurt","kategori":"makanan","contoh_ammiyah":"حط الزبادي في الثلاجة","contoh_arti":"Taruh yogurtnya di kulkas"},{"id":108,"ammiyah":"سكر","transliterasi":"sokkar","fushha":"سُكَّر","arti":"gula","kategori":"bahan masakan","contoh_ammiyah":"حط معلقة سكر في الشاي","contoh_arti":"Taruh satu sendok gula di teh"},{"id":109,"ammiyah":"ملح","transliterasi":"melh","fushha":"مِلْح","arti":"garam","kategori":"bahan masakan","contoh_ammiyah":"الأكل ناقصه ملح","contoh_arti":"Makanannya kurang garam"},{"id":110,"ammiyah":"زيت","transliterasi":"zeet","fushha":"زَيْت","arti":"minyak","kategori":"bahan masakan","contoh_ammiyah":"حط شوية زيت في الطاسة","contoh_arti":"Taruh sedikit minyak di wajan"},{"id":111,"ammiyah":"شاي","transliterasi":"shay","fushha":"شَاي","arti":"teh","kategori":"minuman","contoh_ammiyah":"تشرب شاي ولا قهوة؟","contoh_arti":"Mau minum teh atau kopi?"},{"id":112,"ammiyah":"قهوة","transliterasi":"'ahwa","fushha":"قَهْوَة","arti":"kopi","kategori":"minuman","contoh_ammiyah":"عايز قهوة سادة","contoh_arti":"Saya mau kopi tanpa gula"},{"id":113,"ammiyah":"عصير","transliterasi":"ʿaseer","fushha":"عَصِير","arti":"jus","kategori":"minuman","contoh_ammiyah":"عايز كوباية عصير برتقان","contoh_arti":"Saya mau segelas jus jeruk"},{"id":114,"ammiyah":"مية","transliterasi":"mayya","fushha":"مَاء","arti":"air","kategori":"minuman","contoh_ammiyah":"المية مقطوعة من الصبح","contoh_arti":"Airnya mati sejak pagi"},{"id":115,"ammiyah":"تفاح","transliterasi":"toffah","fushha":"تُفَّاح","arti":"apel","kategori":"buah","contoh_ammiyah":"التفاح ده حلو قوي","contoh_arti":"Apel ini manis sekali"},{"id":116,"ammiyah":"موز","transliterasi":"mooz","fushha":"مَوْز","arti":"pisang","kategori":"buah","contoh_ammiyah":"الموز ده لسه أخضر","contoh_arti":"Pisang ini masih hijau"},{"id":117,"ammiyah":"برتقان","transliterasi":"borto'an","fushha":"بُرْتُقَال","arti":"jeruk","kategori":"buah","contoh_ammiyah":"اشتري كيلو برتقان","contoh_arti":"Belilah satu kilo jeruk"},{"id":118,"ammiyah":"مانجة","transliterasi":"manga","fushha":"مَانْجُو","arti":"mangga","kategori":"buah","contoh_ammiyah":"المانجة موسمها في الصيف","contoh_arti":"Musim mangga ada di musim panas"},{"id":119,"ammiyah":"بطيخ","transliterasi":"bettikh","fushha":"بِطِّيخ","arti":"semangka","kategori":"buah","contoh_ammiyah":"البطيخ ساقع ومنعش","contoh_arti":"Semangka dingin dan menyegarkan"},{"id":120,"ammiyah":"بطاطس","transliterasi":"batatis","fushha":"بَطَاطِس","arti":"kentang","kategori":"sayur","contoh_ammiyah":"قشر البطاطس وقطعها","contoh_arti":"Kupas kentangnya lalu potong"},{"id":121,"ammiyah":"طماطم","transliterasi":"tamatim","fushha":"طَمَاطِم","arti":"tomat","kategori":"sayur","contoh_ammiyah":"الطماطم غالية الأيام دي","contoh_arti":"Tomat mahal akhir-akhir ini"},{"id":122,"ammiyah":"بصل","transliterasi":"basal","fushha":"بَصَل","arti":"bawang bombai","kategori":"sayur","contoh_ammiyah":"قطع البصل ناعم","contoh_arti":"Potong bawangnya halus-halus"},{"id":123,"ammiyah":"توم","transliterasi":"toom","fushha":"ثُوم","arti":"bawang putih","kategori":"sayur","contoh_ammiyah":"حط شوية توم في الأكل","contoh_arti":"Taruh sedikit bawang putih di masakan"},{"id":124,"ammiyah":"خيار","transliterasi":"khiyar","fushha":"خِيَار","arti":"mentimun","kategori":"sayur","contoh_ammiyah":"السلطة فيها خيار وطماطم","contoh_arti":"Salad ini ada mentimun dan tomat"},{"id":125,"ammiyah":"جزر","transliterasi":"gazar","fushha":"جَزَر","arti":"wortel","kategori":"sayur","contoh_ammiyah":"الجزر كويس للعين","contoh_arti":"Wortel bagus untuk mata"},{"id":126,"ammiyah":"خضار","transliterasi":"khodar","fushha":"خُضْرَوَات","arti":"sayur-mayur","kategori":"sayur","contoh_ammiyah":"هروح السوق أشتري خضار","contoh_arti":"Saya mau ke pasar membeli sayur"},{"id":127,"ammiyah":"سلطة","transliterasi":"salata","fushha":"سَلَطَة","arti":"salad","kategori":"makanan","contoh_ammiyah":"عملت سلطة مع الغدا","contoh_arti":"Saya membuat salad untuk makan siang"},{"id":128,"ammiyah":"شوربة","transliterasi":"shorba","fushha":"حَسَاء","arti":"sup","kategori":"makanan","contoh_ammiyah":"الشوربة سخنة قوي","contoh_arti":"Supnya panas sekali"},{"id":129,"ammiyah":"غدا","transliterasi":"ghada","fushha":"غَدَاء","arti":"makan siang","kategori":"makanan","contoh_ammiyah":"الغدا جاهز","contoh_arti":"Makan siang sudah siap"},{"id":130,"ammiyah":"عشا","transliterasi":"ʿasha","fushha":"عَشَاء","arti":"makan malam","kategori":"makanan","contoh_ammiyah":"العشا الساعة تمانية","contoh_arti":"Makan malam jam delapan"},{"id":131,"ammiyah":"فطار","transliterasi":"fetar","fushha":"فُطُور","arti":"sarapan","kategori":"makanan","contoh_ammiyah":"الفطار جاهز على الترابيزة","contoh_arti":"Sarapan sudah siap di meja"},{"id":132,"ammiyah":"فول","transliterasi":"fool","fushha":"فُول","arti":"kacang fava","kategori":"makanan","contoh_ammiyah":"فطارنا النهاردة فول","contoh_arti":"Sarapan kita hari ini kacang fava"},{"id":133,"ammiyah":"دوا","transliterasi":"dawa","fushha":"دَوَاء","arti":"obat","kategori":"kesehatan","contoh_ammiyah":"خد الدوا بعد الأكل","contoh_arti":"Minum obatnya setelah makan"},{"id":134,"ammiyah":"بابا","transliterasi":"baba","fushha":"أَب","arti":"ayah","kategori":"keluarga","contoh_ammiyah":"بابا رجع من الشغل","contoh_arti":"Ayah pulang dari kerja"},{"id":135,"ammiyah":"ماما","transliterasi":"mama","fushha":"أُمّ","arti":"ibu","kategori":"keluarga","contoh_ammiyah":"ماما بتعمل الأكل","contoh_arti":"Ibu sedang memasak"},{"id":136,"ammiyah":"أخ","transliterasi":"akh","fushha":"أَخ","arti":"saudara laki-laki","kategori":"keluarga","contoh_ammiyah":"أخويا أكبر مني بسنتين","contoh_arti":"Saudara laki-laki saya dua tahun lebih tua dari saya"},{"id":137,"ammiyah":"أخت","transliterasi":"okht","fushha":"أُخْت","arti":"saudara perempuan","kategori":"keluarga","contoh_ammiyah":"أختي بتدرس في الجامعة","contoh_arti":"Saudara perempuan saya kuliah di universitas"},{"id":138,"ammiyah":"ابن","transliterasi":"ebn","fushha":"ابْن","arti":"anak laki-laki","kategori":"keluarga","contoh_ammiyah":"ابني في تالتة ابتدائي","contoh_arti":"Anak laki-laki saya kelas tiga SD"},{"id":139,"ammiyah":"بنت","transliterasi":"bint","fushha":"بِنْت","arti":"anak perempuan / gadis","kategori":"keluarga","contoh_ammiyah":"بنتي بتحب الرسم","contoh_arti":"Anak perempuan saya suka menggambar"},{"id":140,"ammiyah":"جوز","transliterasi":"goz","fushha":"زَوْج","arti":"suami","kategori":"keluarga","contoh_ammiyah":"جوزها شغال مهندس","contoh_arti":"Suaminya bekerja sebagai insinyur"},{"id":141,"ammiyah":"مرات","transliterasi":"merat","fushha":"زَوْجَة","arti":"istri","kategori":"keluarga","contoh_ammiyah":"مراتي طبخت الغدا","contoh_arti":"Istri saya sudah memasak makan siang"},{"id":142,"ammiyah":"جدو","transliterasi":"geddo","fushha":"جَدّ","arti":"kakek","kategori":"keluarga","contoh_ammiyah":"جدو بيحكيلنا حكايات","contoh_arti":"Kakek bercerita kepada kami"},{"id":143,"ammiyah":"تيتة","transliterasi":"teeta","fushha":"جَدَّة","arti":"nenek","kategori":"keluarga","contoh_ammiyah":"تيتة عايشة في الريف","contoh_arti":"Nenek tinggal di desa"},{"id":144,"ammiyah":"عم","transliterasi":"ʿamm","fushha":"عَمّ","arti":"paman (saudara ayah)","kategori":"keluarga","contoh_ammiyah":"عمي عنده محل","contoh_arti":"Paman saya punya toko"},{"id":145,"ammiyah":"خال","transliterasi":"khal","fushha":"خَال","arti":"paman (saudara ibu)","kategori":"keluarga","contoh_ammiyah":"خالي سافر السعودية","contoh_arti":"Paman saya pergi ke Arab Saudi"},{"id":146,"ammiyah":"صاحب","transliterasi":"sahib","fushha":"صَدِيق","arti":"teman","kategori":"sosial","contoh_ammiyah":"صاحبي جاي النهاردة","contoh_arti":"Teman saya datang hari ini"},{"id":147,"ammiyah":"عيل","transliterasi":"ʿeyyel","fushha":"طِفْل","arti":"anak kecil","kategori":"keluarga","contoh_ammiyah":"العيل ده نايم","contoh_arti":"Anak ini sedang tidur"},{"id":148,"ammiyah":"راس","transliterasi":"raas","fushha":"رَأْس","arti":"kepala","kategori":"tubuh","contoh_ammiyah":"راسي وجعاني","contoh_arti":"Kepala saya sakit"},{"id":149,"ammiyah":"عين","transliterasi":"ʿeen","fushha":"عَيْن","arti":"mata","kategori":"tubuh","contoh_ammiyah":"غمض عينك شوية","contoh_arti":"Pejamkan matamu sebentar"},{"id":150,"ammiyah":"ودن","transliterasi":"wedn","fushha":"أُذُن","arti":"telinga","kategori":"tubuh","contoh_ammiyah":"ودني بتزن","contoh_arti":"Telinga saya berdenging"},{"id":151,"ammiyah":"إيد","transliterasi":"'eed","fushha":"يَد","arti":"tangan","kategori":"tubuh","contoh_ammiyah":"اغسل إيدك قبل الأكل","contoh_arti":"Cuci tanganmu sebelum makan"},{"id":152,"ammiyah":"رجل","transliterasi":"regl","fushha":"رِجْل","arti":"kaki","kategori":"tubuh","contoh_ammiyah":"رجلي اتعورت","contoh_arti":"Kaki saya terluka"},{"id":153,"ammiyah":"بطن","transliterasi":"batn","fushha":"بَطْن","arti":"perut","kategori":"tubuh","contoh_ammiyah":"بطني بتوجعني من الأكل","contoh_arti":"Perut saya sakit karena makanan"},{"id":154,"ammiyah":"ضهر","transliterasi":"dahr","fushha":"ظَهْر","arti":"punggung","kategori":"tubuh","contoh_ammiyah":"ضهري واجعني من الكرسي","contoh_arti":"Punggung saya sakit karena kursi"},{"id":155,"ammiyah":"شعر","transliterasi":"shaʿr","fushha":"شَعْر","arti":"rambut","kategori":"tubuh","contoh_ammiyah":"شعرها طويل قوي","contoh_arti":"Rambutnya panjang sekali"},{"id":156,"ammiyah":"سنان","transliterasi":"senan","fushha":"أَسْنَان","arti":"gigi","kategori":"tubuh","contoh_ammiyah":"بغسل سناني بعد الأكل","contoh_arti":"Saya membersihkan gigi setelah makan"},{"id":157,"ammiyah":"قلب","transliterasi":"'alb","fushha":"قَلْب","arti":"jantung / hati","kategori":"tubuh","contoh_ammiyah":"قلبي بيدق بسرعة","contoh_arti":"Jantung saya berdetak cepat"},{"id":158,"ammiyah":"وش","transliterasi":"wesh","fushha":"وَجْه","arti":"wajah","kategori":"tubuh","contoh_ammiyah":"اغسل وشك بالمية الباردة","contoh_arti":"Basuh wajahmu dengan air dingin"},{"id":159,"ammiyah":"صباع","transliterasi":"sobaʿ","fushha":"إِصْبَع","arti":"jari","kategori":"tubuh","contoh_ammiyah":"صباعي اتجرح","contoh_arti":"Jari saya terluka"},{"id":160,"ammiyah":"بيت","transliterasi":"beet","fushha":"بَيْت","arti":"rumah","kategori":"bangunan","contoh_ammiyah":"أنا في البيت دلوقتي","contoh_arti":"Saya di rumah sekarang"},{"id":161,"ammiyah":"شقة","transliterasi":"sha''a","fushha":"شَقَّة","arti":"apartemen","kategori":"bangunan","contoh_ammiyah":"الشقة دي في الدور التالت","contoh_arti":"Apartemen ini di lantai tiga"},{"id":162,"ammiyah":"أوضة","transliterasi":"oda","fushha":"غُرْفَة","arti":"kamar","kategori":"bangunan","contoh_ammiyah":"نضف الأوضة قبل ما تنام","contoh_arti":"Bersihkan kamar sebelum tidur"},{"id":163,"ammiyah":"مطبخ","transliterasi":"matbakh","fushha":"مَطْبَخ","arti":"dapur (ruangan)","kategori":"bangunan","contoh_ammiyah":"ماما في المطبخ","contoh_arti":"Ibu ada di dapur"},{"id":164,"ammiyah":"حمام","transliterasi":"hammam","fushha":"حَمَّام","arti":"kamar mandi / toilet","kategori":"bangunan","contoh_ammiyah":"الحمام فين لو سمحت؟","contoh_arti":"Di mana toiletnya, permisi?"},{"id":165,"ammiyah":"صالة","transliterasi":"sala","fushha":"صَالَة","arti":"ruang tengah / ruang tamu","kategori":"bangunan","contoh_ammiyah":"قاعدين في الصالة","contoh_arti":"Kami duduk di ruang tengah"},{"id":166,"ammiyah":"سلم","transliterasi":"sellem","fushha":"سُلَّم","arti":"tangga","kategori":"bangunan","contoh_ammiyah":"خلي بالك وانت نازل السلم","contoh_arti":"Hati-hati saat turun tangga"},{"id":167,"ammiyah":"شارع","transliterasi":"shariʿ","fushha":"شَارِع","arti":"jalan","kategori":"tempat","contoh_ammiyah":"الشارع ده واسع","contoh_arti":"Jalan ini lebar"},{"id":168,"ammiyah":"سوق","transliterasi":"soo'","fushha":"سُوق","arti":"pasar","kategori":"tempat","contoh_ammiyah":"السوق زحمة يوم الجمعة","contoh_arti":"Pasar ramai pada hari Jumat"},{"id":169,"ammiyah":"محل","transliterasi":"mahall","fushha":"مَحَلّ","arti":"toko","kategori":"bangunan","contoh_ammiyah":"المحل ده بيفتح الساعة تسعة","contoh_arti":"Toko ini buka jam sembilan"},{"id":170,"ammiyah":"مدرسة","transliterasi":"madrasa","fushha":"مَدْرَسَة","arti":"sekolah","kategori":"bangunan","contoh_ammiyah":"الولاد راحوا المدرسة","contoh_arti":"Anak-anak pergi ke sekolah"},{"id":171,"ammiyah":"جامعة","transliterasi":"gamʿa","fushha":"جَامِعَة","arti":"universitas","kategori":"bangunan","contoh_ammiyah":"اتخرجت من الجامعة السنة اللي فاتت","contoh_arti":"Saya lulus dari universitas tahun lalu"},{"id":172,"ammiyah":"مستشفى","transliterasi":"mostashfa","fushha":"مُسْتَشْفَى","arti":"rumah sakit","kategori":"bangunan","contoh_ammiyah":"الإسعاف وداه المستشفى","contoh_arti":"Ambulans membawanya ke rumah sakit"},{"id":173,"ammiyah":"صيدلية","transliterasi":"saydaleyya","fushha":"صَيْدَلِيَّة","arti":"apotek","kategori":"bangunan","contoh_ammiyah":"اشتريت الدوا من الصيدلية","contoh_arti":"Saya membeli obat dari apotek"},{"id":174,"ammiyah":"مسجد","transliterasi":"masgid","fushha":"مَسْجِد","arti":"masjid","kategori":"bangunan","contoh_ammiyah":"رايح المسجد أصلي","contoh_arti":"Saya pergi ke masjid untuk salat"},{"id":175,"ammiyah":"كنيسة","transliterasi":"kaneesa","fushha":"كَنِيسَة","arti":"gereja","kategori":"bangunan","contoh_ammiyah":"الكنيسة جنب البيت","contoh_arti":"Gereja ada di sebelah rumah"},{"id":176,"ammiyah":"بنك","transliterasi":"bank","fushha":"مَصْرِف","arti":"bank","kategori":"bangunan","contoh_ammiyah":"البنك بيقفل الساعة تلاتة","contoh_arti":"Bank tutup jam tiga"},{"id":177,"ammiyah":"مطار","transliterasi":"mataar","fushha":"مَطَار","arti":"bandara","kategori":"bangunan","contoh_ammiyah":"رايح المطار بدري","contoh_arti":"Saya pergi ke bandara pagi-pagi"},{"id":178,"ammiyah":"محطة","transliterasi":"mahatta","fushha":"مَحَطَّة","arti":"stasiun / halte","kategori":"tempat","contoh_ammiyah":"المحطة قريبة من هنا","contoh_arti":"Stasiunnya dekat dari sini"},{"id":179,"ammiyah":"ميكروباص","transliterasi":"maykrobas","fushha":"حَافِلَة صَغِيرَة","arti":"angkot / minibus","kategori":"transportasi","contoh_ammiyah":"ركبت الميكروباص للشغل","contoh_arti":"Saya naik angkot ke tempat kerja"},{"id":180,"ammiyah":"أتوبيس","transliterasi":"otobees","fushha":"حَافِلَة","arti":"bus","kategori":"transportasi","contoh_ammiyah":"الأتوبيس اتأخر النهاردة","contoh_arti":"Busnya terlambat hari ini"},{"id":181,"ammiyah":"تاكسي","transliterasi":"taksi","fushha":"سَيَّارَة أُجْرَة","arti":"taksi","kategori":"transportasi","contoh_ammiyah":"ركبت تاكسي عشان اتأخرت","contoh_arti":"Saya naik taksi karena terlambat"},{"id":182,"ammiyah":"قطر","transliterasi":"'atr","fushha":"قِطَار","arti":"kereta","kategori":"transportasi","contoh_ammiyah":"القطر اتأخر ساعة","contoh_arti":"Keretanya terlambat satu jam"},{"id":183,"ammiyah":"مترو","transliterasi":"metro","fushha":"قِطَار الأَنْفَاق","arti":"metro / kereta bawah tanah","kategori":"transportasi","contoh_ammiyah":"المترو أسرع من العربية","contoh_arti":"Metro lebih cepat dari mobil"},{"id":184,"ammiyah":"شمس","transliterasi":"shams","fushha":"شَمْس","arti":"matahari","kategori":"alam","contoh_ammiyah":"الشمس طلعت","contoh_arti":"Matahari sudah terbit"},{"id":185,"ammiyah":"قمر","transliterasi":"'amar","fushha":"قَمَر","arti":"bulan","kategori":"alam","contoh_ammiyah":"القمر منور النهاردة","contoh_arti":"Bulan bersinar terang malam ini"},{"id":186,"ammiyah":"مطر","transliterasi":"matar","fushha":"مَطَر","arti":"hujan","kategori":"alam","contoh_ammiyah":"المطر نازل من الصبح","contoh_arti":"Hujan turun sejak pagi"},{"id":187,"ammiyah":"بحر","transliterasi":"bahr","fushha":"بَحْر","arti":"laut","kategori":"alam","contoh_ammiyah":"هنروح البحر في الصيف","contoh_arti":"Kita akan pergi ke laut di musim panas"},{"id":188,"ammiyah":"قطة","transliterasi":"'otta","fushha":"قِطَّة","arti":"kucing","kategori":"hewan","contoh_ammiyah":"القطة بتشرب لبن","contoh_arti":"Kucing itu minum susu"},{"id":189,"ammiyah":"كلب","transliterasi":"kalb","fushha":"كَلْب","arti":"anjing","kategori":"hewan","contoh_ammiyah":"الكلب بينبح في الشارع","contoh_arti":"Anjing menggonggong di jalan"},{"id":190,"ammiyah":"حصان","transliterasi":"hesan","fushha":"حِصَان","arti":"kuda","kategori":"hewan","contoh_ammiyah":"بيحب يركب الحصان","contoh_arti":"Dia suka menunggang kuda"},{"id":191,"ammiyah":"جمل","transliterasi":"gamal","fushha":"جَمَل","arti":"unta","kategori":"hewan","contoh_ammiyah":"ركبنا الجمل عند الأهرامات","contoh_arti":"Kami naik unta di dekat piramida"},{"id":192,"ammiyah":"فار","transliterasi":"far","fushha":"فَأْر","arti":"tikus","kategori":"hewan","contoh_ammiyah":"فيه فار في المطبخ","contoh_arti":"Ada tikus di dapur"},{"id":193,"ammiyah":"دبانة","transliterasi":"dobbana","fushha":"ذُبَابَة","arti":"lalat","kategori":"hewan","contoh_ammiyah":"فيه دبانة في الأوضة","contoh_arti":"Ada lalat di kamar"},{"id":194,"ammiyah":"صرصار","transliterasi":"sarsar","fushha":"صُرْصُور","arti":"kecoak","kategori":"hewan","contoh_ammiyah":"شفت صرصار في الحمام","contoh_arti":"Saya melihat kecoak di kamar mandi"},{"id":195,"ammiyah":"فلوس","transliterasi":"floos","fushha":"نُقُود","arti":"uang","kategori":"uang","contoh_ammiyah":"نسيت الفلوس في البيت","contoh_arti":"Saya lupa uangnya di rumah"},{"id":196,"ammiyah":"جنيه","transliterasi":"gineeh","fushha":"جُنَيْه","arti":"pound Mesir","kategori":"uang","contoh_ammiyah":"الكيلو بعشرين جنيه","contoh_arti":"Satu kilo harganya dua puluh pound"},{"id":197,"ammiyah":"موبايل","transliterasi":"mobayl","fushha":"هَاتِف مَحْمُول","arti":"HP / ponsel","kategori":"elektronik","contoh_ammiyah":"الموبايل فصل شحن","contoh_arti":"Baterai HP habis"},{"id":198,"ammiyah":"تليفون","transliterasi":"telefon","fushha":"هَاتِف","arti":"telepon","kategori":"elektronik","contoh_ammiyah":"التليفون بيرن","contoh_arti":"Teleponnya berdering"},{"id":199,"ammiyah":"كمبيوتر","transliterasi":"kombyoter","fushha":"حَاسُوب","arti":"komputer","kategori":"elektronik","contoh_ammiyah":"الكمبيوتر تقيل قوي النهاردة","contoh_arti":"Komputernya lemot sekali hari ini"},{"id":200,"ammiyah":"تلفزيون","transliterasi":"televizyon","fushha":"تِلْفَاز","arti":"televisi","kategori":"elektronik","contoh_ammiyah":"اقفل التلفزيون وروح نام","contoh_arti":"Matikan televisi dan pergilah tidur"},{"id":201,"ammiyah":"كتاب","transliterasi":"kitab","fushha":"كِتَاب","arti":"buku","kategori":"pendidikan","contoh_ammiyah":"قريت الكتاب ده كله","contoh_arti":"Saya sudah membaca seluruh buku ini"},{"id":202,"ammiyah":"شغل","transliterasi":"shoghl","fushha":"عَمَل","arti":"pekerjaan","kategori":"pekerjaan","contoh_ammiyah":"أنا رايح الشغل","contoh_arti":"Saya pergi ke tempat kerja"},{"id":203,"ammiyah":"وقت","transliterasi":"wa't","fushha":"وَقْت","arti":"waktu","kategori":"waktu","contoh_ammiyah":"معنديش وقت النهاردة","contoh_arti":"Saya tidak punya waktu hari ini"},{"id":204,"ammiyah":"يوم","transliterasi":"yoom","fushha":"يَوْم","arti":"hari","kategori":"waktu","contoh_ammiyah":"كل يوم بصحى الساعة سبعة","contoh_arti":"Setiap hari saya bangun jam tujuh"},{"id":205,"ammiyah":"أسبوع","transliterasi":"osbooʿ","fushha":"أُسْبُوع","arti":"minggu (pekan)","kategori":"waktu","contoh_ammiyah":"هسافر الأسبوع الجاي","contoh_arti":"Saya akan bepergian minggu depan"},{"id":206,"ammiyah":"شهر","transliterasi":"shahr","fushha":"شَهْر","arti":"bulan (kalender)","kategori":"waktu","contoh_ammiyah":"المرتب بينزل آخر الشهر","contoh_arti":"Gaji masuk di akhir bulan"},{"id":207,"ammiyah":"سنة","transliterasi":"sana","fushha":"سَنَة","arti":"tahun","kategori":"waktu","contoh_ammiyah":"بقالي سنة هنا","contoh_arti":"Sudah setahun saya di sini"},{"id":208,"ammiyah":"صبح","transliterasi":"sobh","fushha":"صَبَاح","arti":"pagi","kategori":"waktu","contoh_ammiyah":"بصحى بدري الصبح","contoh_arti":"Saya bangun pagi-pagi"},{"id":209,"ammiyah":"ليل","transliterasi":"leel","fushha":"لَيْل","arti":"malam","kategori":"waktu","contoh_ammiyah":"الليل هادي في الحتة دي","contoh_arti":"Malam hari tenang di daerah ini"}];
+const SRC='kamus.json';
+const AR_ORDER='ءابتثجحخدذرزسشصضطظعغفقكلمنهوي';
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const cap=s=>s.charAt(0).toUpperCase()+s.slice(1);
+const stripAr=s=>s.replace(/[\u064B-\u065F\u0670\u06D6-\u06ED\u0640]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/ؤ/g,'و').replace(/ئ/g,'ي');
+const normAr=s=>stripAr(s).replace(/[^\u0621-\u064A]+/g,' ').trim();
+const normLat=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[ʿʾ'’‘`]/g,'').replace(/[^a-z0-9]+/g,' ').replace(/([a-z0-9])\1+/g,'$1').trim();
+const hasAr=s=>/[\u0600-\u06FF]/.test(s);
+
+function arKey(s){s=normAr(s);if(s.length>3&&s.startsWith('ال')&&s[2]!==' ')s=s.slice(2);return s}
+function cmpAr(a,b){
+  const n=Math.min(a.length,b.length);
+  for(let i=0;i<n;i++){
+    const x=a[i]===' '?-1:AR_ORDER.indexOf(a[i]),y=b[i]===' '?-1:AR_ORDER.indexOf(b[i]);
+    if(x!==y)return x-y;
+  }
+  return a.length-b.length;
+}
+let E=[],CATS=[];
+const prep=rows=>rows.map(e=>{
+  const ik=normLat(e.arti);
+  const sk=arKey(e.ammiyah);
+  return {...e,
+    fu:e.fushha.split('/').map(x=>x.trim()).filter(Boolean),
+    nAm:normAr(e.ammiyah),nFu:normAr(e.fushha),nCe:normAr(e.contoh_ammiyah),
+    nTr:normLat(e.transliterasi),nAr:ik,nKt:normLat(e.kategori),nCa:normLat(e.contoh_arti),
+    sk,ik,gl:sk.charAt(0),gi:(ik.charAt(0)||'#').toUpperCase()};
+});
+
+const calcCats=()=>Object.entries(E.reduce((m,e)=>(m[e.kategori]=(m[e.kategori]||0)+1,m),{}))
+  .sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0],'id')).map(x=>x[0]);
+
+const state={q:'',cat:'all',mode:'ar',open:null,saved:new Set()};
+try{JSON.parse(localStorage.getItem('kamus-saved')||'[]').forEach(i=>state.saved.add(i))}catch(_){}
+const persist=()=>{try{localStorage.setItem('kamus-saved',JSON.stringify([...state.saved]))}catch(_){}};
+
+/* ---------- search ---------- */
+function tokens(q){
+  return q.trim().split(/\s+/).map(t=>{
+    const ar=hasAr(t);const n=ar?normAr(t):normLat(t);
+    return n?{t:n,ar}:null;
+  }).filter(Boolean);
+}
+function fs(f,t){
+  if(!f)return 0;
+  if(f===t)return 100;
+  if(f.startsWith(t))return 75;
+  if((' '+f).includes(' '+t))return 55;
+  if(t.length>1&&f.includes(t))return 25;
+  return 0;
+}
+function score(e,toks){
+  let total=0;
+  for(const {t,ar} of toks){
+    const fields=ar
+      ? [[e.nAm,1],[e.nFu,.7],[e.nCe,.25]]
+      : [[e.nTr,1],[e.nAr,1],[e.nKt,.3],[e.nCa,.25]];
+    let best=0;
+    for(const [field,weight] of fields) best=Math.max(best,fs(field,t)*weight);
+    if(!best)return 0;
+    total+=best;
+  }
+  return total;
+}
+
+const star='<svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.2-.9L12 3Z"/></svg>';
+const chipsEl=$('#chips');
+const listEl=$('#list');
+const emptyEl=$('#empty');
+const countEl=$('#count');
+
+function buildChips(){
+  const items=[['all','Semua'],['saved','Tersimpan'],...CATS.map(c=>[c,cap(c)])];
+  chipsEl.innerHTML=items.map(([key,label])=>
+    `<button class="chip" type="button" data-cat="${esc(key)}" aria-pressed="${state.cat===key}">${esc(label)} <span class="n">0</span></button>`
+  ).join('');
+}
+
+function detail(e){
+  return `<div class="detail">
+    <div><div class="lbl">Bahasa Arab baku (Fushha)</div><div class="fu">${e.fu.map(v=>`<span lang="ar" dir="rtl">${esc(v)}</span>`).join('')}</div></div>
+    ${e.contoh_ammiyah?`<div><div class="lbl">Contoh kalimat ‘Ammiyah</div><div class="ex"><div class="exar" lang="ar" dir="rtl">${esc(e.contoh_ammiyah)}</div><div class="exid">${esc(e.contoh_arti||'')}</div></div></div>`:''}
+    <div class="acts">
+      <button class="btn" type="button" data-act="copy">Salin kata</button>
+      <button class="btn" type="button" data-act="cat" data-cat="${esc(e.kategori)}">Kategori ${esc(e.kategori)}</button>
+    </div>
+  </div>`;
+}
+function rowHTML(e){
+  const open=state.open===e.id,sv=state.saved.has(e.id);
+  return `<li class="row${open?' open':''}" data-id="${e.id}"><div class="head">
+  <button class="rowbtn" type="button" data-act="toggle" aria-expanded="${open}"><span class="lat"><span class="mean">${esc(e.arti)}</span><span class="tr">${esc(e.transliterasi)}</span></span><span class="ar" lang="ar" dir="rtl">${esc(e.ammiyah)}</span></button>
+  <button class="star" type="button" data-act="star" aria-pressed="${sv}" aria-label="Simpan ${esc(e.ammiyah)}">${star}</button></div>${open?detail(e):''}</li>`;
+}
+
+function render(){
+  const toks=tokens(state.q);
+  const scored=[];
+  for(const e of E){const s=toks.length?score(e,toks):1;if(s>0)scored.push({e,s})}
+  const cnt={all:scored.length,saved:0};
+  for(const {e} of scored){cnt[e.kategori]=(cnt[e.kategori]||0)+1;if(state.saved.has(e.id))cnt.saved++}
+  chipsEl.querySelectorAll('.chip').forEach(b=>{
+    const k=b.dataset.cat,on=k===state.cat;
+    b.querySelector('.n').textContent=cnt[k]||0;
+    b.setAttribute('aria-pressed',on);
+    b.classList.toggle('dim',!cnt[k]&&!on);
+  });
+  const rows=scored.filter(({e})=>state.cat==='all'||(state.cat==='saved'?state.saved.has(e.id):e.kategori===state.cat));
+  const base=state.mode==='ar'?(a,b)=>cmpAr(a.e.sk,b.e.sk)||a.e.id-b.e.id:(a,b)=>a.e.ik.localeCompare(b.e.ik,'id')||cmpAr(a.e.sk,b.e.sk);
+  rows.sort(toks.length?(a,b)=>b.s-a.s||base(a,b):base);
+
+  listEl.className='list'+(state.mode==='id'?' mode-id':'');
+  countEl.textContent=rows.length+(toks.length?' hasil':' kata');
+  if(!rows.length){
+    listEl.hidden=true;emptyEl.hidden=false;
+    emptyEl.innerHTML=state.cat==='saved'&&!toks.length
+      ?'<p>Belum ada kata tersimpan. Ketuk bintang pada sebuah kata untuk menyimpannya.</p>'
+      :`<p>${toks.length?`Tidak ada hasil untuk “${esc(state.q.trim())}”. Periksa ejaan atau coba kata kunci lain.`:'Tidak ada kata di kategori ini.'}</p>`
+        +(state.cat!=='all'?'<button class="btn" type="button" data-act="all">Tampilkan semua kategori</button>':'');
+    return;
+  }
+  emptyEl.hidden=true;listEl.hidden=false;
+  let html='',last=null;
+  for(const {e} of rows){
+    if(!toks.length){
+      const g=state.mode==='ar'?e.gl:e.gi;
+      if(g!==last){html+=`<li class="grp${state.mode==='ar'?' a':''}" aria-hidden="true"${state.mode==='ar'?' lang="ar"':''}>${esc(g)}</li>`;last=g}
+    }
+    html+=rowHTML(e);
+  }
+  listEl.innerHTML=html;
+}
+
+/* ---------- actions ---------- */
+const toastEl=$('#toast');let tt;
+function toast(m){toastEl.textContent=m;toastEl.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>toastEl.classList.remove('on'),1900)}
+const reduce=matchMedia('(prefers-reduced-motion:reduce)');
+
+function setOpen(id){
+  const prev=state.open;
+  if(prev!==null){
+    const p=listEl.querySelector(`li[data-id="${prev}"]`);
+    if(p){p.classList.remove('open');p.querySelector('.detail')?.remove();p.querySelector('.rowbtn').setAttribute('aria-expanded','false')}
+  }
+  state.open=prev===id?null:id;
+  if(state.open!==null){
+    const li=listEl.querySelector(`li[data-id="${id}"]`);
+    li.classList.add('open');
+    li.querySelector('.rowbtn').setAttribute('aria-expanded','true');
+    li.insertAdjacentHTML('beforeend',detail(E.find(e=>e.id===id)));
+    li.scrollIntoView({block:'nearest',behavior:reduce.matches?'auto':'smooth'});
+  }
+}
+
+async function copy(e){
+  const t=`${e.ammiyah} (${e.transliterasi}) = ${e.arti}`;
+  try{await navigator.clipboard.writeText(t);toast('Disalin')}
+  catch(_){
+    try{const a=document.createElement('textarea');a.value=t;a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();toast('Disalin')}
+    catch(_){toast('Gagal menyalin')}
+  }
+}
+function setCat(c){state.cat=c;render()}
+
+listEl.addEventListener('click',ev=>{
+  const b=ev.target.closest('[data-act]');if(!b)return;
+  const li=b.closest('li.row');const id=li&&+li.dataset.id;const e=li&&E.find(x=>x.id===id);
+  switch(b.dataset.act){
+    case 'toggle':setOpen(id);break;
+    case 'star':{
+      const on=!state.saved.has(id);on?state.saved.add(id):state.saved.delete(id);persist();
+      b.setAttribute('aria-pressed',on);
+      const sc=chipsEl.querySelector('[data-cat="saved"] .n');if(sc)sc.textContent=[...state.saved].filter(i=>E.some(x=>x.id===i&&(!tokens(state.q).length||score(x,tokens(state.q))>0))).length;
+      toast(on?'Disimpan':'Dihapus dari simpanan');break}
+    case 'copy':copy(e);break;
+    case 'cat':setCat(b.dataset.cat);window.scrollTo({top:0});break;
+  }
+});
+emptyEl.addEventListener('click',ev=>{if(ev.target.closest('[data-act="all"]'))setCat('all')});
+chipsEl.addEventListener('click',ev=>{const b=ev.target.closest('.chip');if(b)setCat(b.dataset.cat)});
+document.querySelector('.seg').addEventListener('click',ev=>{
+  const b=ev.target.closest('[data-mode]');if(!b||b.dataset.mode===state.mode)return;
+  state.mode=b.dataset.mode;
+  document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  render();
+});
+const qEl=$('#q'),clr=$('#clear');
+qEl.addEventListener('input',()=>{state.q=qEl.value;clr.hidden=!qEl.value;render()});
+clr.addEventListener('click',()=>{qEl.value='';state.q='';clr.hidden=true;render();qEl.focus()});
+qEl.addEventListener('keydown',ev=>{if(ev.key==='Escape'&&qEl.value){qEl.value='';state.q='';clr.hidden=true;render()}});
+document.addEventListener('keydown',ev=>{
+  if(ev.key==='/'&&!/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)){ev.preventDefault();qEl.focus()}
+});
+
+/* ---------- memuat database ---------- */
+const noteEl=$('#note');
+function showNote(msg,picker){
+  noteEl.hidden=!msg;
+  noteEl.innerHTML=msg?`<span>${esc(msg)}</span>${picker?'<button class="btn" type="button" data-act="pick">Pilih file kamus.json</button>':''}`:'';
+}
+function clean(raw){
+  if(!Array.isArray(raw))throw new Error('isi file harus berupa daftar entri (array)');
+  const used=new Set(),out=[],skipped=[];
+  let max=raw.reduce((m,e)=>Math.max(m,Number.isInteger(e&&e.id)?e.id:0),0);
+  raw.forEach((e,i)=>{
+    if(!e||typeof e!=='object'){skipped.push(i+1);return}
+    const r={};
+    for(const k of ['ammiyah','transliterasi','fushha','arti','kategori','contoh_ammiyah','contoh_arti'])r[k]=String(e[k]==null?'':e[k]).trim();
+    if(!r.ammiyah||!r.arti){skipped.push(i+1);return}
+    let id=Number.isInteger(e.id)&&e.id>0?e.id:0;
+    if(!id||used.has(id))id=++max;
+    used.add(id);r.id=id;r.kategori=(r.kategori||'lainnya').toLowerCase();
+    out.push(r);
+  });
+  return {out,skipped};
+}
+function load(raw,note){
+  const {out,skipped}=clean(raw);
+  if(!out.length)throw new Error('tidak ada entri yang valid');
+  E=prep(out);CATS=calcCats();
+  state.saved=new Set([...state.saved].filter(i=>E.some(e=>e.id===i)));
+  if(state.cat!=='all'&&state.cat!=='saved'&&!CATS.includes(state.cat))state.cat='all';
+  state.open=null;
+  $('#total').textContent=E.length+' kata';
+  buildChips();render();
+  let msg=note||'';
+  if(skipped.length)msg+=(msg?' ':'')+`${skipped.length} entri dilewati karena kata Arab atau artinya kosong (urutan ke-${skipped.slice(0,8).join(', ')}${skipped.length>8?', …':''}).`;
+  showNote(msg,!!note);
+}
+async function init(){
+  try{
+    const r=await fetch(SRC+'?v='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    let raw;
+    try{raw=JSON.parse(await r.text())}catch(err){throw new Error('format JSON tidak valid ('+err.message+')')}
+    load(raw,'');
+  }catch(err){
+    const local=location.protocol==='file:';
+    load(FALLBACK,`Tidak bisa membaca ${SRC}: ${local?'browser memblokir pembacaan file lokal. Buka lewat server (misalnya npx serve) atau pilih file secara manual.':err.message}. Yang tampil adalah salinan bawaan yang mungkin belum terbaru.`);
+  }
+}
+const picker=document.createElement('input');picker.type='file';picker.accept='.json,application/json';picker.hidden=true;document.body.appendChild(picker);
+noteEl.addEventListener('click',ev=>{if(ev.target.closest('[data-act="pick"]'))picker.click()});
+picker.addEventListener('change',async()=>{
+  const f=picker.files[0];if(!f)return;
+  try{
+    let raw;try{raw=JSON.parse(await f.text())}catch(err){throw new Error('format JSON tidak valid ('+err.message+')')}
+    load(raw,`Memakai file ${f.name} yang Anda pilih (berlaku sampai halaman ditutup).`);
+  }catch(err){toast('Gagal memuat: '+err.message)}
+  picker.value='';
+});
+
+init();
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('Service Worker terdaftar:', reg.scope))
+        .catch(err => console.log('Gagal mendaftarkan Service Worker:', err));
+    });
+  }
+</script>
+
+</body>
+</html>
