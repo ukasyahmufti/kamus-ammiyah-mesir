@@ -31538,5 +31538,835 @@
     "kategori": "kata tanya",
     "contoh_ammiyah": "إيه المشكلة بالظبط؟",
     "contoh_arti": "Apa tepatnya masalahnya?"
+  },
+  {
+    "id": 3155,
+    "ammiyah": "هدمة",
+    "transliterasi": "hedma",
+    "fushha": "ثَوْب",
+    "arti": "baju (sepotong pakaian)",
+    "kategori": "pakaian",
+    "contoh_ammiyah": "اشتريت هدمة جديدة للعيد",
+    "contoh_arti": "Saya membeli baju baru untuk hari raya"
+  },
+  {
+    "id": 3156,
+    "ammiyah": "جبة",
+    "transliterasi": "gubba",
+    "fushha": "جُبَّة",
+    "arti": "jubah (jubah panjang terbuka, dipakai ulama)",
+    "kategori": "pakaian",
+    "contoh_ammiyah": "الشيخ لابس جبة وقفطان",
+    "contoh_arti": "Pak syekh memakai jubah dan kaftan"
+  },
+  {
+    "id": 3157,
+    "ammiyah": "يحتفظ بـ",
+    "transliterasi": "yeHtafez be",
+    "fushha": "يَحْتَفِظُ بِـ",
+    "arti": "menyimpan / mempertahankan",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "باحتفظ بالإيصال",
+    "contoh_arti": "Saya menyimpan struknya"
+  },
+  {
+    "id": 3158,
+    "ammiyah": "يخزن",
+    "transliterasi": "yekhazzen",
+    "fushha": "يُخَزِّنُ",
+    "arti": "menyimpan (stok) / menimbun",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "بنخزن الأكل في المخزن",
+    "contoh_arti": "Kami menyimpan makanan di gudang"
+  },
+  {
+    "id": 3159,
+    "ammiyah": "يحوش",
+    "transliterasi": "yeHawwesh",
+    "fushha": "يَدَّخِرُ",
+    "arti": "menyimpan / menabung (uang sedikit-sedikit)",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "باحوش فلوس للعيد",
+    "contoh_arti": "Saya menabung uang untuk hari raya"
+  },
+  {
+    "id": 3160,
+    "ammiyah": "يوضب",
+    "transliterasi": "yewaDDab",
+    "fushha": "يُرَتِّبُ / يُجَهِّزُ",
+    "arti": "mengemas / membereskan",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "وضب الشنطة قبل السفر",
+    "contoh_arti": "Kemasi tasmu sebelum bepergian"
+  },
+  {
+    "id": 3161,
+    "ammiyah": "يغلف",
+    "transliterasi": "yeghallef",
+    "fushha": "يُغَلِّفُ",
+    "arti": "membungkus",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "غلف الهدية",
+    "contoh_arti": "Bungkus hadiahnya"
+  },
+  {
+    "id": 3162,
+    "ammiyah": "يعبي",
+    "transliterasi": "yeʿabbi",
+    "fushha": "يُعَبِّئُ",
+    "arti": "mengisi / mengemas ke wadah",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "عبي الإزازة مية",
+    "contoh_arti": "Isi botolnya dengan air"
+  },
+  {
+    "id": 3163,
+    "ammiyah": "يطحن",
+    "transliterasi": "yeTHan",
+    "fushha": "يَطْحَنُ",
+    "arti": "menggiling",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "العطار بيطحن القهوة",
+    "contoh_arti": "Penjual rempah menggiling kopi"
+  },
+  {
+    "id": 3164,
+    "ammiyah": "يعقم",
+    "transliterasi": "yeʿa''em",
+    "fushha": "يُعَقِّمُ",
+    "arti": "mensterilkan / mendisinfeksi",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "عقم الجرح الأول",
+    "contoh_arti": "Sterilkan lukanya dulu"
+  },
+  {
+    "id": 3165,
+    "ammiyah": "يحقن",
+    "transliterasi": "yeH'en",
+    "fushha": "يَحْقِنُ",
+    "arti": "menyuntik",
+    "kategori": "kata kerja",
+    "contoh_ammiyah": "الممرضة بتحقن المريض",
+    "contoh_arti": "Perawat menyuntik pasien"
+  },
+  {
+    "id": 3166,
+    "ammiyah": "سجاير",
+    "transliterasi": "sagaayer",
+    "fushha": "سَجَائِر",
+    "arti": "rokok",
+    "kategori": "sosial",
+    "contoh_ammiyah": "الكشك بيبيع سجاير",
+    "contoh_arti": "Kios itu menjual rokok"
+  },
+  {
+    "id": 3167,
+    "ammiyah": "كارت شحن",
+    "transliterasi": "kart shaHn",
+    "fushha": "بِطَاقَة شَحْن",
+    "arti": "voucher pulsa / kartu isi ulang",
+    "kategori": "elektronik",
+    "contoh_ammiyah": "اشتريت كارت شحن من الكشك",
+    "contoh_arti": "Saya membeli voucher pulsa dari kios"
+  },
+  {
+    "id": 3168,
+    "ammiyah": "ويفر",
+    "transliterasi": "wayfar",
+    "fushha": "وَيْفَر",
+    "arti": "wafer",
+    "kategori": "makanan",
+    "contoh_ammiyah": "عايز ويفر بالشيكولاتة",
+    "contoh_arti": "Saya mau wafer cokelat"
+  },
+  {
+    "id": 3169,
+    "ammiyah": "جبنة مثلثات",
+    "transliterasi": "gebna mosallasaat",
+    "fushha": "جُبْن مُثَلَّثَات",
+    "arti": "keju segitiga (keju olesan kemasan)",
+    "kategori": "makanan",
+    "contoh_ammiyah": "حطيت جبنة مثلثات في الساندوتش",
+    "contoh_arti": "Saya menaruh keju segitiga di sandwich"
+  },
+  {
+    "id": 3170,
+    "ammiyah": "شاي فتلة",
+    "transliterasi": "shay fatla",
+    "fushha": "شَاي فِي أَكْيَاس",
+    "arti": "teh celup (kantong)",
+    "kategori": "minuman",
+    "contoh_ammiyah": "عايز كوباية شاي فتلة",
+    "contoh_arti": "Saya mau segelas teh celup"
+  },
+  {
+    "id": 3171,
+    "ammiyah": "حاجة ساقعة",
+    "transliterasi": "Haaga saa'eʿa",
+    "fushha": "مَشْرُوب بَارِد",
+    "arti": "minuman dingin / minuman bersoda kemasan",
+    "kategori": "minuman",
+    "contoh_ammiyah": "عايز حاجة ساقعة",
+    "contoh_arti": "Saya mau minuman dingin"
+  },
+  {
+    "id": 3172,
+    "ammiyah": "مجلة",
+    "transliterasi": "magalla",
+    "fushha": "مَجَلَّة",
+    "arti": "majalah",
+    "kategori": "sosial",
+    "contoh_ammiyah": "قريت المجلة دي امبارح",
+    "contoh_arti": "Saya membaca majalah ini kemarin"
+  },
+  {
+    "id": 3173,
+    "ammiyah": "ورق",
+    "transliterasi": "wara'",
+    "fushha": "وَرَق",
+    "arti": "kertas",
+    "kategori": "alat tulis",
+    "contoh_ammiyah": "محتاج ورق للطابعة",
+    "contoh_arti": "Saya butuh kertas untuk printer"
+  },
+  {
+    "id": 3174,
+    "ammiyah": "معلبات",
+    "transliterasi": "moʿallabaat",
+    "fushha": "مُعَلَّبَات",
+    "arti": "makanan kaleng",
+    "kategori": "makanan",
+    "contoh_ammiyah": "اشتريت معلبات من السوبر ماركت",
+    "contoh_arti": "Saya membeli makanan kaleng dari supermarket"
+  },
+  {
+    "id": 3175,
+    "ammiyah": "كاتشب",
+    "transliterasi": "katshab",
+    "fushha": "كَاتْشَب",
+    "arti": "saus tomat (kecap tomat)",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "حط كاتشب على البطاطس",
+    "contoh_arti": "Tambahkan saus tomat di atas kentang"
+  },
+  {
+    "id": 3176,
+    "ammiyah": "جيلي",
+    "transliterasi": "jeeli",
+    "fushha": "جِيلِي",
+    "arti": "agar-agar / jeli",
+    "kategori": "makanan",
+    "contoh_ammiyah": "عملت جيلي بالفراولة",
+    "contoh_arti": "Saya membuat jeli stroberi"
+  },
+  {
+    "id": 3177,
+    "ammiyah": "مناديل مبللة",
+    "transliterasi": "manadeel mobballala",
+    "fushha": "مَنَادِيل مُبَلَّلَة",
+    "arti": "tisu basah",
+    "kategori": "kamar mandi",
+    "contoh_ammiyah": "جيب مناديل مبللة للعيال",
+    "contoh_arti": "Bawakan tisu basah untuk anak-anak"
+  },
+  {
+    "id": 3178,
+    "ammiyah": "تموين",
+    "transliterasi": "tamweena",
+    "fushha": "تَمْوِين",
+    "arti": "jatah sembako bersubsidi",
+    "kategori": "uang",
+    "contoh_ammiyah": "بنشتري السكر والزيت من التموين",
+    "contoh_arti": "Kami membeli gula dan minyak dari toko subsidi"
+  },
+  {
+    "id": 3179,
+    "ammiyah": "مفيش فكة",
+    "transliterasi": "mafeesh fakka",
+    "fushha": "لَا تُوجَدُ فَكَّة",
+    "arti": "tidak ada uang receh",
+    "kategori": "ungkapan",
+    "contoh_ammiyah": "معلش مفيش فكة",
+    "contoh_arti": "Maaf, tidak ada uang receh"
+  },
+  {
+    "id": 3180,
+    "ammiyah": "خضري",
+    "transliterasi": "khoDari",
+    "fushha": "خَضَرِيّ",
+    "arti": "penjual sayur",
+    "kategori": "pekerjaan",
+    "contoh_ammiyah": "الخضري جاب طماطم طازة",
+    "contoh_arti": "Penjual sayur membawa tomat segar"
+  },
+  {
+    "id": 3181,
+    "ammiyah": "فكهاني",
+    "transliterasi": "fakahaani",
+    "fushha": "فَاكِهَانِيّ",
+    "arti": "penjual buah",
+    "kategori": "pekerjaan",
+    "contoh_ammiyah": "هجيب موز من الفكهاني",
+    "contoh_arti": "Saya akan beli pisang dari penjual buah"
+  },
+  {
+    "id": 3182,
+    "ammiyah": "عطار",
+    "transliterasi": "ʿaTTaar",
+    "fushha": "عَطَّار",
+    "arti": "penjual rempah dan jamu",
+    "kategori": "pekerjaan",
+    "contoh_ammiyah": "العطار عنده كل البهارات",
+    "contoh_arti": "Penjual rempah punya semua bumbu"
+  },
+  {
+    "id": 3183,
+    "ammiyah": "عطارة",
+    "transliterasi": "ʿaTTaara",
+    "fushha": "عَطَّارَة",
+    "arti": "toko rempah dan jamu",
+    "kategori": "tempat",
+    "contoh_ammiyah": "رحت العطارة اشتري كركم",
+    "contoh_arti": "Saya pergi ke toko rempah untuk membeli kunyit"
+  },
+  {
+    "id": 3184,
+    "ammiyah": "سماك",
+    "transliterasi": "sammaak",
+    "fushha": "سَمَّاك",
+    "arti": "penjual ikan",
+    "kategori": "pekerjaan",
+    "contoh_ammiyah": "السماك نضف السمك",
+    "contoh_arti": "Penjual ikan membersihkan ikannya"
+  },
+  {
+    "id": 3185,
+    "ammiyah": "تاجر",
+    "transliterasi": "taager",
+    "fushha": "تَاجِر",
+    "arti": "pedagang",
+    "kategori": "pekerjaan",
+    "contoh_ammiyah": "التاجر فتح محل جديد",
+    "contoh_arti": "Pedagang itu membuka toko baru"
+  },
+  {
+    "id": 3186,
+    "ammiyah": "ضاني",
+    "transliterasi": "Daani",
+    "fushha": "ضَأْن",
+    "arti": "daging domba / kambing",
+    "kategori": "makanan",
+    "contoh_ammiyah": "كيلو ضاني لو سمحت",
+    "contoh_arti": "Satu kilo daging domba, tolong"
+  },
+  {
+    "id": 3187,
+    "ammiyah": "كندوز",
+    "transliterasi": "kandooz",
+    "fushha": "لَحْم بَقَر",
+    "arti": "daging sapi",
+    "kategori": "makanan",
+    "contoh_ammiyah": "عايز نص كيلو كندوز",
+    "contoh_arti": "Saya mau setengah kilo daging sapi"
+  },
+  {
+    "id": 3188,
+    "ammiyah": "بوري",
+    "transliterasi": "boori",
+    "fushha": "بُورِي",
+    "arti": "ikan belanak",
+    "kategori": "makanan",
+    "contoh_ammiyah": "هنشوي البوري النهارده",
+    "contoh_arti": "Kita akan memanggang ikan belanak hari ini"
+  },
+  {
+    "id": 3189,
+    "ammiyah": "دواجن",
+    "transliterasi": "dawaagen",
+    "fushha": "دَوَاجِن",
+    "arti": "unggas / ayam ternak",
+    "kategori": "makanan",
+    "contoh_ammiyah": "محل الدواجن قريب من هنا",
+    "contoh_arti": "Toko unggas dekat dari sini"
+  },
+  {
+    "id": 3190,
+    "ammiyah": "طرشي",
+    "transliterasi": "torshi",
+    "fushha": "مُخَلَّلَات",
+    "arti": "acar sayuran",
+    "kategori": "makanan",
+    "contoh_ammiyah": "الطرشي مع الفول حلو",
+    "contoh_arti": "Acar sayur enak dimakan dengan kacang fava"
+  },
+  {
+    "id": 3191,
+    "ammiyah": "أعشاب",
+    "transliterasi": "aʿshaab",
+    "fushha": "أَعْشَاب",
+    "arti": "tanaman herbal / ramuan jamu",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "باشرب أعشاب قبل النوم",
+    "contoh_arti": "Saya minum ramuan herbal sebelum tidur"
+  },
+  {
+    "id": 3192,
+    "ammiyah": "قفة",
+    "transliterasi": "'offa",
+    "fushha": "قُفَّة",
+    "arti": "keranjang anyaman (untuk belanja)",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "خدت القفة وروحت السوق",
+    "contoh_arti": "Saya membawa keranjang dan pergi ke pasar"
+  },
+  {
+    "id": 3193,
+    "ammiyah": "شوال",
+    "transliterasi": "showaal",
+    "fushha": "جُوَال",
+    "arti": "karung",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "شوال الرز تقيل",
+    "contoh_arti": "Karung beras itu berat"
+  },
+  {
+    "id": 3194,
+    "ammiyah": "تروسيكل",
+    "transliterasi": "trosikl",
+    "fushha": "دَرَّاجَة نَارِيَّة ثُلَاثِيَّة",
+    "arti": "motor roda tiga pengangkut barang",
+    "kategori": "transportasi",
+    "contoh_ammiyah": "الخضار جاي بالتروسيكل",
+    "contoh_arti": "Sayurnya datang dengan motor roda tiga"
+  },
+  {
+    "id": 3195,
+    "ammiyah": "ربطة",
+    "transliterasi": "rabTa",
+    "fushha": "رَبْطَة",
+    "arti": "seikat / satu ikat",
+    "kategori": "ukuran",
+    "contoh_ammiyah": "ربطة جرجير بجنيه",
+    "contoh_arti": "Seikat rukola seharga satu pound"
+  },
+  {
+    "id": 3196,
+    "ammiyah": "بالجملة",
+    "transliterasi": "bil-gomla",
+    "fushha": "بِالْجُمْلَة",
+    "arti": "secara grosir",
+    "kategori": "kata keterangan",
+    "contoh_ammiyah": "بيبيع بالجملة",
+    "contoh_arti": "Dia menjual secara grosir"
+  },
+  {
+    "id": 3197,
+    "ammiyah": "بالقطاعي",
+    "transliterasi": "bil-'eTaaʿi",
+    "fushha": "بِالتَّجْزِئَة",
+    "arti": "secara eceran",
+    "kategori": "kata keterangan",
+    "contoh_ammiyah": "بيبيع بالقطاعي",
+    "contoh_arti": "Dia menjual secara eceran"
+  },
+  {
+    "id": 3198,
+    "ammiyah": "ببلاش",
+    "transliterasi": "bebalaash",
+    "fushha": "بِلَا مُقَابِل",
+    "arti": "gratis / sangat murah",
+    "kategori": "kata keterangan",
+    "contoh_ammiyah": "الطماطم النهارده ببلاش",
+    "contoh_arti": "Tomat hari ini murah sekali"
+  },
+  {
+    "id": 3199,
+    "ammiyah": "مستورد",
+    "transliterasi": "mostawrad",
+    "fushha": "مُسْتَوْرَد",
+    "arti": "impor",
+    "kategori": "sifat",
+    "contoh_ammiyah": "الجبنة دي مستوردة",
+    "contoh_arti": "Keju ini impor"
+  },
+  {
+    "id": 3200,
+    "ammiyah": "بكام الكيلو",
+    "transliterasi": "bikaam el-keelo",
+    "fushha": "بِكَمْ الْكِيلُو",
+    "arti": "berapa harga per kilo",
+    "kategori": "ungkapan",
+    "contoh_ammiyah": "الطماطم بكام الكيلو؟",
+    "contoh_arti": "Tomat berapa harganya per kilo?"
+  },
+  {
+    "id": 3201,
+    "ammiyah": "آخر سعر",
+    "transliterasi": "aakher seʿr",
+    "fushha": "آخِر سِعْر",
+    "arti": "harga pas / harga terakhir",
+    "kategori": "ungkapan",
+    "contoh_ammiyah": "قولي آخر سعر",
+    "contoh_arti": "Katakan harga pasnya"
+  },
+  {
+    "id": 3202,
+    "ammiyah": "كركم",
+    "transliterasi": "korkom",
+    "fushha": "كُرْكُم",
+    "arti": "kunyit",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "حط ملعقة كركم في الرز",
+    "contoh_arti": "Tambahkan satu sendok kunyit ke nasi"
+  },
+  {
+    "id": 3203,
+    "ammiyah": "هيل",
+    "transliterasi": "heel",
+    "fushha": "هَيْل / حَبَهَان",
+    "arti": "kapulaga",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "قهوة بالهيل",
+    "contoh_arti": "Kopi dengan kapulaga"
+  },
+  {
+    "id": 3204,
+    "ammiyah": "سمسم",
+    "transliterasi": "semsem",
+    "fushha": "سِمْسِم",
+    "arti": "wijen",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "رش سمسم على العيش",
+    "contoh_arti": "Taburkan wijen di atas roti"
+  },
+  {
+    "id": 3205,
+    "ammiyah": "حبة البركة",
+    "transliterasi": "Habbet el-baraka",
+    "fushha": "حَبَّة الْبَرَكَة",
+    "arti": "jintan hitam",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "باحط حبة البركة في العجين",
+    "contoh_arti": "Saya menaruh jintan hitam di adonan"
+  },
+  {
+    "id": 3206,
+    "ammiyah": "زعتر",
+    "transliterasi": "zaʿtar",
+    "fushha": "زَعْتَر",
+    "arti": "timi / za'atar (rempah)",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "عيش بالزعتر",
+    "contoh_arti": "Roti dengan za'atar"
+  },
+  {
+    "id": 3207,
+    "ammiyah": "شمر",
+    "transliterasi": "shamar",
+    "fushha": "شَمْر",
+    "arti": "adas",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "باشرب شمر بعد الأكل",
+    "contoh_arti": "Saya minum teh adas setelah makan"
+  },
+  {
+    "id": 3208,
+    "ammiyah": "كراوية",
+    "transliterasi": "karaweya",
+    "fushha": "كَرَوِيَا",
+    "arti": "caraway (rempah biji)",
+    "kategori": "bahan masakan",
+    "contoh_ammiyah": "اشتريت كراوية من العطار",
+    "contoh_arti": "Saya membeli caraway dari penjual rempah"
+  },
+  {
+    "id": 3209,
+    "ammiyah": "شاش",
+    "transliterasi": "shaash",
+    "fushha": "شَاش",
+    "arti": "kasa / perban",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "حط شاش على الجرح",
+    "contoh_arti": "Taruh kasa di atas luka"
+  },
+  {
+    "id": 3210,
+    "ammiyah": "مطهر",
+    "transliterasi": "moTahher",
+    "fushha": "مُطَهِّر",
+    "arti": "antiseptik / desinfektan",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "اشتري مطهر من الصيدلية",
+    "contoh_arti": "Beli antiseptik di apotek"
+  },
+  {
+    "id": 3211,
+    "ammiyah": "سبرتو",
+    "transliterasi": "sebirto",
+    "fushha": "كُحُول طِبِّي",
+    "arti": "alkohol medis",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "بلل القطنة بالسبرتو",
+    "contoh_arti": "Basahi kapasnya dengan alkohol medis"
+  },
+  {
+    "id": 3212,
+    "ammiyah": "مية أكسجين",
+    "transliterasi": "maya oksegeen",
+    "fushha": "مَاء الْأُكْسِجِين",
+    "arti": "hidrogen peroksida",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "نضف الجرح بمية أكسجين",
+    "contoh_arti": "Bersihkan luka dengan hidrogen peroksida"
+  },
+  {
+    "id": 3213,
+    "ammiyah": "سرنجة",
+    "transliterasi": "serenga",
+    "fushha": "مِحْقَن",
+    "arti": "spuit / alat suntik",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "السرنجة دي لمرة واحدة",
+    "contoh_arti": "Spuit ini sekali pakai"
+  },
+  {
+    "id": 3214,
+    "ammiyah": "محلول",
+    "transliterasi": "maHlool",
+    "fushha": "مَحْلُول",
+    "arti": "larutan / cairan (oralit, infus)",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "اشرب المحلول ده بالراحة",
+    "contoh_arti": "Minum larutan ini pelan-pelan"
+  },
+  {
+    "id": 3215,
+    "ammiyah": "برشام",
+    "transliterasi": "borshaam",
+    "fushha": "أَقْرَاص",
+    "arti": "pil / tablet (sebutan sehari-hari)",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "خدت برشام للصداع",
+    "contoh_arti": "Saya minum pil untuk sakit kepala"
+  },
+  {
+    "id": 3216,
+    "ammiyah": "شريط",
+    "transliterasi": "shereeT",
+    "fushha": "شَرِيط",
+    "arti": "strip obat / pita",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "اديني شريط برشام",
+    "contoh_arti": "Beri saya satu strip pil"
+  },
+  {
+    "id": 3217,
+    "ammiyah": "نشرة",
+    "transliterasi": "nashra",
+    "fushha": "نَشْرَة",
+    "arti": "brosur / leaflet penjelasan obat",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "اقرا النشرة قبل ما تاخد الدوا",
+    "contoh_arti": "Baca brosurnya sebelum minum obat"
+  },
+  {
+    "id": 3218,
+    "ammiyah": "جهاز ضغط",
+    "transliterasi": "gehaaz Daght",
+    "fushha": "جِهَاز قِيَاس الضَّغْط",
+    "arti": "tensimeter",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "معاه جهاز ضغط في البيت",
+    "contoh_arti": "Dia punya tensimeter di rumah"
+  },
+  {
+    "id": 3219,
+    "ammiyah": "كمادة",
+    "transliterasi": "kammaada",
+    "fushha": "كَمَّادَة",
+    "arti": "kompres",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "حط كمادة ساقعة على راسه",
+    "contoh_arti": "Taruh kompres dingin di kepalanya"
+  },
+  {
+    "id": 3220,
+    "ammiyah": "فوطة صحية",
+    "transliterasi": "foTa SeHHiya",
+    "fushha": "فُوطَة صِحِّيَّة",
+    "arti": "pembalut wanita",
+    "kategori": "kamar mandi",
+    "contoh_ammiyah": "عايزة فوطة صحية من الصيدلية",
+    "contoh_arti": "Saya mau pembalut dari apotek"
+  },
+  {
+    "id": 3221,
+    "ammiyah": "لبن أطفال",
+    "transliterasi": "laban aTfaal",
+    "fushha": "حَلِيب أَطْفَال",
+    "arti": "susu formula bayi",
+    "kategori": "makanan",
+    "contoh_ammiyah": "الصيدلية عندها لبن أطفال",
+    "contoh_arti": "Apotek punya susu formula bayi"
+  },
+  {
+    "id": 3222,
+    "ammiyah": "فازلين",
+    "transliterasi": "fazleen",
+    "fushha": "فَازِلِين",
+    "arti": "vaselin",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "حطي فازلين على شفايفك",
+    "contoh_arti": "Oleskan vaselin di bibirmu"
+  },
+  {
+    "id": 3223,
+    "ammiyah": "مكمل غذائي",
+    "transliterasi": "mokammel ghedhaa'i",
+    "fushha": "مُكَمِّل غِذَائِيّ",
+    "arti": "suplemen makanan",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "باخد مكمل غذائي كل يوم",
+    "contoh_arti": "Saya minum suplemen setiap hari"
+  },
+  {
+    "id": 3224,
+    "ammiyah": "تاريخ الصلاحية",
+    "transliterasi": "tareekh eS-SalaaHiya",
+    "fushha": "تَارِيخ الصَّلَاحِيَّة",
+    "arti": "tanggal kedaluwarsa",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "شوف تاريخ الصلاحية قبل ما تشتري",
+    "contoh_arti": "Lihat tanggal kedaluwarsa sebelum membeli"
+  },
+  {
+    "id": 3225,
+    "ammiyah": "منتهي الصلاحية",
+    "transliterasi": "montahi eS-SalaaHiya",
+    "fushha": "مُنْتَهِي الصَّلَاحِيَّة",
+    "arti": "kedaluwarsa",
+    "kategori": "sifat",
+    "contoh_ammiyah": "الدوا ده منتهي الصلاحية",
+    "contoh_arti": "Obat ini sudah kedaluwarsa"
+  },
+  {
+    "id": 3226,
+    "ammiyah": "بعد الأكل",
+    "transliterasi": "baʿd el-akl",
+    "fushha": "بَعْدَ الطَّعَام",
+    "arti": "setelah makan",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "الدوا ده بعد الأكل",
+    "contoh_arti": "Obat ini diminum setelah makan"
+  },
+  {
+    "id": 3227,
+    "ammiyah": "قبل الأكل",
+    "transliterasi": "'abl el-akl",
+    "fushha": "قَبْلَ الطَّعَام",
+    "arti": "sebelum makan",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "اشرب الدوا قبل الأكل",
+    "contoh_arti": "Minum obatnya sebelum makan"
+  },
+  {
+    "id": 3228,
+    "ammiyah": "مرتين في اليوم",
+    "transliterasi": "marrateen fil-yom",
+    "fushha": "مَرَّتَيْنِ فِي الْيَوْم",
+    "arti": "dua kali sehari",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "خد الدوا مرتين في اليوم",
+    "contoh_arti": "Minum obatnya dua kali sehari"
+  },
+  {
+    "id": 3229,
+    "ammiyah": "تلات مرات في اليوم",
+    "transliterasi": "talat marraat fil-yom",
+    "fushha": "ثَلَاثَ مَرَّاتٍ فِي الْيَوْم",
+    "arti": "tiga kali sehari",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "الدكتور قال تلات مرات في اليوم",
+    "contoh_arti": "Dokter bilang tiga kali sehari"
+  },
+  {
+    "id": 3230,
+    "ammiyah": "من غير روشتة",
+    "transliterasi": "min gheer roshetta",
+    "fushha": "بِدُونِ وَصْفَة طِبِّيَّة",
+    "arti": "tanpa resep dokter",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "الدوا ده مش بيتباع من غير روشتة",
+    "contoh_arti": "Obat ini tidak dijual tanpa resep"
+  },
+  {
+    "id": 3231,
+    "ammiyah": "أعراض جانبية",
+    "transliterasi": "aʿraaD gaanibiya",
+    "fushha": "أَعْرَاض جَانِبِيَّة",
+    "arti": "efek samping",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "الدوا ده ليه أعراض جانبية",
+    "contoh_arti": "Obat ini punya efek samping"
+  },
+  {
+    "id": 3232,
+    "ammiyah": "إسعافات أولية",
+    "transliterasi": "esʿaafaat awwaliya",
+    "fushha": "إِسْعَافَات أَوَّلِيَّة",
+    "arti": "P3K / pertolongan pertama",
+    "kategori": "kesehatan",
+    "contoh_ammiyah": "عندنا شنطة إسعافات أولية",
+    "contoh_arti": "Kami punya kotak P3K"
+  },
+  {
+    "id": 3233,
+    "ammiyah": "منظف",
+    "transliterasi": "monazzef",
+    "fushha": "مُنَظِّف",
+    "arti": "pembersih (cairan)",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "اشتري منظف للأرض",
+    "contoh_arti": "Beli pembersih lantai"
+  },
+  {
+    "id": 3234,
+    "ammiyah": "عبوة",
+    "transliterasi": "ʿobwa",
+    "fushha": "عُبْوَة",
+    "arti": "kemasan / botol kemasan",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "الزيت في عبوة كبيرة",
+    "contoh_arti": "Minyaknya dalam kemasan besar"
+  },
+  {
+    "id": 3235,
+    "ammiyah": "فحم",
+    "transliterasi": "faHm",
+    "fushha": "فَحْم",
+    "arti": "arang",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "اشتريت فحم للشوي",
+    "contoh_arti": "Saya membeli arang untuk memanggang"
+  },
+  {
+    "id": 3236,
+    "ammiyah": "جاز",
+    "transliterasi": "gaaz",
+    "fushha": "كِيرُوسِين",
+    "arti": "minyak tanah",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "الوابور بيشتغل بالجاز",
+    "contoh_arti": "Kompor primus memakai minyak tanah"
+  },
+  {
+    "id": 3237,
+    "ammiyah": "جركن",
+    "transliterasi": "jerken",
+    "fushha": "جَرْكَن",
+    "arti": "jeriken",
+    "kategori": "perkakas rumah",
+    "contoh_ammiyah": "الجركن ده بيشيل عشرين لتر",
+    "contoh_arti": "Jeriken ini muat dua puluh liter"
   }
 ]
