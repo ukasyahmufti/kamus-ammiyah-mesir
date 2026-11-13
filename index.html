@@ -178,26 +178,6 @@ function score(e,toks){
   let total=0;
   for(const {t,ar} of toks){
     const F=ar?[[e.nAm,1],[e.nFu,.7],[e.nCe,.25]]:[[e.nTr,1],[e.nAr,1],[e.nKt,.3],[e.nCa,.25]];
-    let best=0;for(const [f,w] of F)best=Math.max(best,fs(f,t)*w);
-    if(!best)return 0;
-    total+=best;
-  }
-  return total;
-}
-
-/* ---------- views ---------- */
-const listEl=$('#list'),emptyEl=$('#empty'),chipsEl=$('#chips'),countEl=$('#count');
-const star='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></svg>';
-const buildChips=()=>{chipsEl.innerHTML=['<button class="chip" type="button" data-cat="all">Semua<span class="n"></span></button>',
-  '<button class="chip" type="button" data-cat="saved">Tersimpan<span class="n"></span></button>',
-  ...CATS.map(c=>`<button class="chip" type="button" data-cat="${esc(c)}">${esc(cap(c))}<span class="n"></span></button>`)].join('')};
-
-function detail(e){
-  return `<div class="detail" role="region" aria-label="Detail ${esc(e.ammiyah)}">
-  ${e.fu.length?`<div><div class="lbl">Fushha (Arab baku)</div><div class="fu">${e.fu.map(f=>`<span lang="ar" dir="rtl">${esc(f)}</span>`).join('')}</div></div>`:''}
-  ${e.contoh_ammiyah?`<div><div class="lbl">Contoh kalimat</div><div class="ex"><div class="exar" lang="ar" dir="rtl">${esc(e.contoh_ammiyah)}</div><div class="exid">${esc(e.contoh_arti)}</div></div></div>`:''}
-  <div class="acts">
-    ${canSpeak?`<button class="btn" type="button" data-act="say" data-say="${esc(e.ammiyah)}">Dengar kata</button>${e.contoh_ammiyah?`<button class="btn" type="button" data-act="say" data-say="${esc(e.contoh_ammiyah)}">Dengar kalimat</button>`:''}`:''}
     <button class="btn" type="button" data-act="copy">Salin</button>
     <button class="btn" type="button" data-act="cat" data-cat="${esc(e.kategori)}">Kategori ${esc(e.kategori)}</button>
   </div></div>`;
@@ -267,14 +247,7 @@ function setOpen(id){
     li.scrollIntoView({block:'nearest',behavior:reduce.matches?'auto':'smooth'});
   }
 }
-function speak(text){
-  const vs=speechSynthesis.getVoices().filter(v=>/^ar/i.test(v.lang));
-  const v=vs.find(x=>/EG/i.test(x.lang))||vs[0];
-  if(!v&&speechSynthesis.getVoices().length){toast('Suara Arab belum terpasang di perangkat ini.');return}
-  speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(text);u.lang=v?v.lang:'ar-EG';if(v)u.voice=v;u.rate=.85;
-  speechSynthesis.speak(u);
-}
+
 async function copy(e){
   const t=`${e.ammiyah} (${e.transliterasi}) = ${e.arti}`;
   try{await navigator.clipboard.writeText(t);toast('Disalin')}
@@ -295,7 +268,6 @@ listEl.addEventListener('click',ev=>{
       b.setAttribute('aria-pressed',on);
       const sc=chipsEl.querySelector('[data-cat="saved"] .n');if(sc)sc.textContent=[...state.saved].filter(i=>E.some(x=>x.id===i&&(!tokens(state.q).length||score(x,tokens(state.q))>0))).length;
       toast(on?'Disimpan':'Dihapus dari simpanan');break}
-    case 'say':speak(b.dataset.say);break;
     case 'copy':copy(e);break;
     case 'cat':setCat(b.dataset.cat);window.scrollTo({top:0});break;
   }
@@ -373,7 +345,7 @@ picker.addEventListener('change',async()=>{
   }catch(err){toast('Gagal memuat: '+err.message)}
   picker.value='';
 });
-if(canSpeak)speechSynthesis.getVoices();
+
 init();
 </script>
 <script>
