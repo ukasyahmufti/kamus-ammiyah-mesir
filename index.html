@@ -188,8 +188,6 @@ function score(e,toks){
 /* ---------- views ---------- */
 const listEl=$('#list'),emptyEl=$('#empty'),chipsEl=$('#chips'),countEl=$('#count');
 const star='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M12 3.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9l-5.2 2.8 1-5.9-4.3-4.1 5.9-.8z"/></svg>';
-const canSpeak='speechSynthesis' in window;
-
 const buildChips=()=>{chipsEl.innerHTML=['<button class="chip" type="button" data-cat="all">Semua<span class="n"></span></button>',
   '<button class="chip" type="button" data-cat="saved">Tersimpan<span class="n"></span></button>',
   ...CATS.map(c=>`<button class="chip" type="button" data-cat="${esc(c)}">${esc(cap(c))}<span class="n"></span></button>`)].join('')};
